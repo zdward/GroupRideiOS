@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,64 +15,91 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="grouber_pass">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-uH-fH3">
-                                <rect key="frame" x="82" y="235" width="216" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" hint="Password" identifier="grouber_pass" label="Password"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-73-0GO">
-                                <rect key="frame" x="82" y="163" width="216" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-73-0GO">
+                                <rect key="frame" x="163.66666666666666" y="163" width="87" height="30"/>
                                 <accessibility key="accessibilityConfiguration" hint="Username" identifier="grouber_user" label="Username"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
-                                <rect key="frame" x="168" y="288" width="53" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
+                                <rect key="frame" x="188" y="288" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="Login_Button_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUa-Ng-jlQ"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RPI GroUber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8di-vN-PfS">
-                                <rect key="frame" x="139" y="51" width="96" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RPI GroUber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8di-vN-PfS">
+                                <rect key="frame" x="159" y="51" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-uH-fH3">
+                                <rect key="frame" x="163.66666666666666" y="250" width="87" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="Password" identifier="grouber_pass" label="Password"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" hint="Password" identifier="passCode" label="Pass">
                             <accessibilityTraits key="traits" none="YES"/>
                             <bool key="isElement" value="YES"/>
                         </accessibility>
+                        <constraints>
+                            <constraint firstItem="vcd-eh-5PQ" firstAttribute="top" secondItem="BBM-uH-fH3" secondAttribute="bottom" constant="8" id="8tx-Zq-hDZ"/>
+                            <constraint firstItem="BBM-uH-fH3" firstAttribute="top" secondItem="SVa-73-0GO" secondAttribute="bottom" constant="57" id="A4d-yH-wZo"/>
+                            <constraint firstItem="8di-vN-PfS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Grh-qe-JFa"/>
+                            <constraint firstItem="SVa-73-0GO" firstAttribute="top" secondItem="8di-vN-PfS" secondAttribute="bottom" constant="91" id="YVD-6O-cbZ"/>
+                            <constraint firstItem="BBM-uH-fH3" firstAttribute="width" secondItem="SVa-73-0GO" secondAttribute="width" id="jbF-KA-9fr"/>
+                            <constraint firstItem="8di-vN-PfS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="v3X-pj-wBi"/>
+                            <constraint firstItem="BBM-uH-fH3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xK0-yo-Dz8"/>
+                            <constraint firstItem="vcd-eh-5PQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yBN-iQ-4eV"/>
+                            <constraint firstItem="SVa-73-0GO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zbX-dI-9Ta"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="password_field" destination="BBM-uH-fH3" id="V19-ad-JpX"/>
+                        <outlet property="username_field" destination="SVa-73-0GO" id="Fi8-el-RNi"/>
+                        <segue destination="oSF-NX-E3f" kind="show" identifier="Login_Segue" id="hNr-Xz-KTw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="133.33333333333334" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--Hub View Controller-->
         <scene sceneID="87d-Nj-Lf4">
             <objects>
-                <viewController id="oSF-NX-E3f" sceneMemberID="viewController">
+                <viewController id="oSF-NX-E3f" customClass="HubViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ehk-ir-Ozm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXF-vM-UOy">
+                                <rect key="frame" x="186" y="357.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VXF-vM-UOy" firstAttribute="centerY" secondItem="Ehk-ir-Ozm" secondAttribute="centerY" id="Ocj-sj-bNT"/>
+                            <constraint firstItem="VXF-vM-UOy" firstAttribute="centerX" secondItem="Ehk-ir-Ozm" secondAttribute="centerX" id="qzU-6E-Ibi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JUN-5p-AtX"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26m-u5-QqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="134"/>
+            <point key="canvasLocation" x="813.04347826086962" y="133.69565217391306"/>
         </scene>
     </scenes>
 </document>
