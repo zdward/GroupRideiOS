@@ -14,6 +14,7 @@
 		7A2ADAEC21F186D900434337 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ADAEA21F186D900434337 /* LaunchScreen.storyboard */; };
 		7A2ADAF721F186D900434337 /* GroUberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADAF621F186D900434337 /* GroUberTests.swift */; };
 		7A2ADB0221F186D900434337 /* GroUberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADB0121F186D900434337 /* GroUberUITests.swift */; };
+		7A89839921FCD96B0099C7CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89839821FCD96B0099C7CD /* AboutViewController.swift */; };
 		836AEA2121FBB2AA0062FB39 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836AEA2021FBB2AA0062FB39 /* HubViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		7A2ADAFD21F186D900434337 /* GroUberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroUberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ADB0121F186D900434337 /* GroUberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroUberUITests.swift; sourceTree = "<group>"; };
 		7A2ADB0321F186D900434337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A89839821FCD96B0099C7CD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		836AEA2021FBB2AA0062FB39 /* HubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				7A2ADAE821F186D900434337 /* Assets.xcassets */,
 				7A2ADAEA21F186D900434337 /* LaunchScreen.storyboard */,
 				7A2ADAED21F186D900434337 /* Info.plist */,
+				7A89839821FCD96B0099C7CD /* AboutViewController.swift */,
 			);
 			path = GroUber;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				7A2ADAE421F186D500434337 /* ViewController.swift in Sources */,
 				836AEA2121FBB2AA0062FB39 /* HubViewController.swift in Sources */,
 				7A2ADAE221F186D500434337 /* AppDelegate.swift in Sources */,
+				7A89839921FCD96B0099C7CD /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HE3L22C6VW;
+				DEVELOPMENT_TEAM = SQF98TKDWX;
 				INFOPLIST_FILE = GroUber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HE3L22C6VW;
+				DEVELOPMENT_TEAM = SQF98TKDWX;
 				INFOPLIST_FILE = GroUber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

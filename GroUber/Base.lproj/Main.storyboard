@@ -25,8 +25,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
-                                <rect key="frame" x="188" y="288" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
+                                <rect key="frame" x="188" y="288" width="38" height="51"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="Login_Button_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUa-Ng-jlQ"/>
@@ -38,13 +38,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-uH-fH3">
-                                <rect key="frame" x="163.66666666666666" y="250" width="87" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-uH-fH3">
+                                <rect key="frame" x="163" y="227" width="87" height="30"/>
                                 <accessibility key="accessibilityConfiguration" hint="Password" identifier="grouber_pass" label="Password"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uic-AD-fSM">
+                                <rect key="frame" x="149" y="347" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot Password"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv8-Pb-sDZ">
+                                <rect key="frame" x="155" y="392" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="About GroUber"/>
+                                <connections>
+                                    <action selector="About_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWT-1T-Dfh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" hint="Password" identifier="passCode" label="Pass">
@@ -68,6 +81,7 @@
                         <outlet property="password_field" destination="BBM-uH-fH3" id="V19-ad-JpX"/>
                         <outlet property="username_field" destination="SVa-73-0GO" id="Fi8-el-RNi"/>
                         <segue destination="oSF-NX-E3f" kind="show" identifier="Login_Segue" id="hNr-Xz-KTw"/>
+                        <segue destination="f0e-fx-8JB" kind="show" identifier="About_Segue" id="aZP-hv-Gd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,6 +114,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26m-u5-QqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813.04347826086962" y="133.69565217391306"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="8MQ-GO-LCc">
+            <objects>
+                <viewController id="f0e-fx-8JB" customClass="AboutViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLZ-oK-wMz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEG-JL-kkE">
+                                <rect key="frame" x="0.0" y="48" width="414" height="688"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x09-1K-UI9">
+                                        <rect key="frame" x="17" y="35" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="Back_Main:" destination="ibH-xR-GaP" eventType="touchUpInside" id="hR0-i0-bET"/>
+                                            <action selector="Back_Main:" destination="f0e-fx-8JB" eventType="touchUpInside" id="nLx-CN-VX5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Vgp-gL-EPB"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Main_Segue" id="Kry-ma-kHT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4DY-WG-RoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ibH-xR-GaP" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="882.88043478260875"/>
         </scene>
     </scenes>
 </document>
