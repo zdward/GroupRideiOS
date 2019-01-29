@@ -51,7 +51,7 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="IZt-6e-FaY" kind="show" id="t99-YA-oLq"/>
-                                </connection>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uic-AD-fSM">
                                 <rect key="frame" x="149" y="347" width="115" height="30"/>
