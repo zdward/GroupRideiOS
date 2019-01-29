@@ -46,20 +46,20 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysx-U2-YHx">
-                                <rect key="frame" x="179" y="353" width="57" height="30"/>
+                                <rect key="frame" x="178" y="363" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="IZt-6e-FaY" kind="show" id="t99-YA-oLq"/>
-                                </connection>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uic-AD-fSM">
-                                <rect key="frame" x="149" y="347" width="115" height="30"/>
+                                <rect key="frame" x="149" y="331" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forgot Password"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv8-Pb-sDZ">
-                                <rect key="frame" x="155" y="392" width="104" height="30"/>
+                                <rect key="frame" x="299" y="42" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="About GroUber"/>
                                 <connections>
@@ -308,4 +308,7 @@
             <point key="canvasLocation" x="0.0" y="882.88043478260875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Kry-ma-kHT"/>
+    </inferredMetricsTieBreakers>
 </document>
