@@ -1,4 +1,4 @@
-# RPI_GroUber
+# RPI_GroupRide
 
 This repository contains/will contain the iOS and Android implementations of RPI GroUber, an application meant to make cheap transportation more accessible to RPI students.
 
