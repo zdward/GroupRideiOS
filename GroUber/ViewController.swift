@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
     //when the login button is pressed
     @IBAction func Login_Button_Action(_ sender: Any) {
         //Alex's addition: When the fields are blank, an error is returned
