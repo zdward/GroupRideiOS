@@ -25,13 +25,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
-                                <rect key="frame" x="188" y="288" width="38" height="51"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="Login_Button_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUa-Ng-jlQ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RPI GroUber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8di-vN-PfS">
                                 <rect key="frame" x="159" y="51" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,6 +57,13 @@
                                 <state key="normal" title="About GroUber"/>
                                 <connections>
                                     <action selector="About_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWT-1T-Dfh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-eh-5PQ">
+                                <rect key="frame" x="188" y="285" width="38" height="51"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="Login_Button_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUa-Ng-jlQ"/>
                                 </connections>
                             </button>
                         </subviews>
