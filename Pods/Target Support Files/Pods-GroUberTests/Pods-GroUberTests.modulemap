@@ -1,0 +1,6 @@
+framework module Pods_GroUberTests {
+  umbrella header "Pods-GroUberTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
