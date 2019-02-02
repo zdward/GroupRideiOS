@@ -226,41 +226,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ats-LP-6Cq">
-                                <rect key="frame" x="0.0" y="27" width="414" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PM-2x-nol">
+                                <rect key="frame" x="152" y="134" width="110" height="33"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="aB8-Pm-Whs"/>
+                                </constraints>
+                                <state key="normal" title="Edit Profile"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-yO-4ad">
+                                <rect key="frame" x="134" y="252" width="146" height="30"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <state key="normal" title="Privacy Settings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-9B-gMX">
+                                <rect key="frame" x="152" y="452" width="110" height="30"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Log Out"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJc-VZ-r8H">
+                                <rect key="frame" x="152" y="305" width="117" height="30"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <state key="normal" title="Security Settings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-tH-SW1">
+                                <rect key="frame" x="134" y="197" width="146" height="30"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <state key="normal" title="Manage Notifications"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ats-LP-6Cq">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <items>
                                     <navigationItem title="Settings Tester Title" id="SYG-dz-Vqu"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PM-2x-nol">
-                                <rect key="frame" x="169" y="134" width="75" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit Profile"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3K-yO-4ad">
-                                <rect key="frame" x="152" y="252" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Privacy Settings"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-9B-gMX">
-                                <rect key="frame" x="180" y="452" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log Out"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJc-VZ-r8H">
-                                <rect key="frame" x="152" y="305" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Security Settings"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-tH-SW1">
-                                <rect key="frame" x="134" y="197" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Manage Notifications"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ats-LP-6Cq" firstAttribute="centerX" secondItem="Ehk-ir-Ozm" secondAttribute="centerX" id="Qi7-fh-g6Z"/>
+                            <constraint firstItem="7MP-9B-gMX" firstAttribute="trailing" secondItem="4PM-2x-nol" secondAttribute="trailing" id="BWS-Tc-3Ex"/>
+                            <constraint firstItem="sJc-VZ-r8H" firstAttribute="top" secondItem="X3K-yO-4ad" secondAttribute="bottom" constant="23" id="HXl-UY-u21"/>
+                            <constraint firstAttribute="trailing" secondItem="ats-LP-6Cq" secondAttribute="trailing" id="OzN-yE-7YQ"/>
+                            <constraint firstItem="X3K-yO-4ad" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sJc-VZ-r8H" secondAttribute="leading" constant="-18" id="QTg-Jy-jC7"/>
+                            <constraint firstItem="JUN-5p-AtX" firstAttribute="bottom" secondItem="7MP-9B-gMX" secondAttribute="bottom" constant="210" id="Ran-Sa-n9C"/>
+                            <constraint firstItem="7MP-9B-gMX" firstAttribute="leading" secondItem="sJc-VZ-r8H" secondAttribute="leading" id="YAr-4c-Dgd"/>
+                            <constraint firstItem="4PM-2x-nol" firstAttribute="leading" secondItem="X3K-yO-4ad" secondAttribute="leading" constant="18" id="bPS-Z9-0eq"/>
+                            <constraint firstItem="oCA-tH-SW1" firstAttribute="top" secondItem="4PM-2x-nol" secondAttribute="bottom" constant="30" id="clj-S3-kFQ"/>
+                            <constraint firstItem="ats-LP-6Cq" firstAttribute="top" secondItem="JUN-5p-AtX" secondAttribute="top" id="dOe-2k-hrW"/>
+                            <constraint firstItem="ats-LP-6Cq" firstAttribute="leading" secondItem="Ehk-ir-Ozm" secondAttribute="leading" id="fHE-X3-q8r"/>
+                            <constraint firstItem="4PM-2x-nol" firstAttribute="trailing" secondItem="X3K-yO-4ad" secondAttribute="trailing" constant="-18" id="lcE-2v-if1"/>
+                            <constraint firstItem="4PM-2x-nol" firstAttribute="top" secondItem="ats-LP-6Cq" secondAttribute="bottom" constant="70" id="nAn-RR-VFl"/>
+                            <constraint firstItem="X3K-yO-4ad" firstAttribute="top" secondItem="oCA-tH-SW1" secondAttribute="bottom" constant="25" id="nBj-Qn-utW"/>
+                            <constraint firstItem="X3K-yO-4ad" firstAttribute="leading" secondItem="JUN-5p-AtX" secondAttribute="leading" constant="134" id="qWM-6s-iRh"/>
+                            <constraint firstItem="JUN-5p-AtX" firstAttribute="trailing" secondItem="sJc-VZ-r8H" secondAttribute="trailing" constant="145" id="tl4-ZB-Vpu"/>
+                            <constraint firstItem="4PM-2x-nol" firstAttribute="centerX" secondItem="ats-LP-6Cq" secondAttribute="centerX" id="w2z-hT-3YQ"/>
+                            <constraint firstItem="oCA-tH-SW1" firstAttribute="centerX" secondItem="X3K-yO-4ad" secondAttribute="centerX" id="zrd-Jf-Eyh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JUN-5p-AtX"/>
                     </view>
@@ -269,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26m-u5-QqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="133"/>
+            <point key="canvasLocation" x="934.78260869565224" y="132.88043478260872"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="8MQ-GO-LCc">
@@ -308,4 +329,7 @@
             <point key="canvasLocation" x="0.0" y="882.88043478260875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bUI-D4-hQu"/>
+    </inferredMetricsTieBreakers>
 </document>
