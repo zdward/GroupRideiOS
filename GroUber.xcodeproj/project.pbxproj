@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D650E322060AC4001C3928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41D650E222060AC4001C3928 /* GoogleService-Info.plist */; };
 		7A2ADAE221F186D500434337 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE121F186D500434337 /* AppDelegate.swift */; };
 		7A2ADAE421F186D500434337 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE321F186D500434337 /* ViewController.swift */; };
 		7A2ADAE721F186D500434337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE521F186D500434337 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41D650E222060AC4001C3928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A2ADADE21F186D500434337 /* GroUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ADAE121F186D500434337 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ADAE321F186D500434337 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				836AEA2021FBB2AA0062FB39 /* HubViewController.swift */,
 				7A2ADAE821F186D900434337 /* Assets.xcassets */,
 				7A2ADAEA21F186D900434337 /* LaunchScreen.storyboard */,
+				41D650E222060AC4001C3928 /* GoogleService-Info.plist */,
 				7A2ADAED21F186D900434337 /* Info.plist */,
 			);
 			path = GroUber;
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2ADAEC21F186D900434337 /* LaunchScreen.storyboard in Resources */,
+				41D650E322060AC4001C3928 /* GoogleService-Info.plist in Resources */,
 				7A2ADAE921F186D900434337 /* Assets.xcassets in Resources */,
 				7A2ADAE721F186D500434337 /* Main.storyboard in Resources */,
 			);
