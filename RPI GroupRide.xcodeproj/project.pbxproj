@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41D650E322060AC4001C3928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41D650E222060AC4001C3928 /* GoogleService-Info.plist */; };
 		7A2ADAE221F186D500434337 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE121F186D500434337 /* AppDelegate.swift */; };
 		7A2ADAE421F186D500434337 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE321F186D500434337 /* ViewController.swift */; };
 		7A2ADAE721F186D500434337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ADAE521F186D500434337 /* Main.storyboard */; };
@@ -37,18 +36,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41D650E222060AC4001C3928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7A2ADADE21F186D500434337 /* GroUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2ADADE21F186D500434337 /* RPI GroupRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPI GroupRide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ADAE121F186D500434337 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ADAE321F186D500434337 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A2ADAE621F186D500434337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A2ADAE821F186D900434337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A2ADAEB21F186D900434337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A2ADAED21F186D900434337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A2ADAF221F186D900434337 /* GroUberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroUberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2ADAF221F186D900434337 /* RPI GroupRideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RPI GroupRideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ADAF621F186D900434337 /* GroUberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroUberTests.swift; sourceTree = "<group>"; };
 		7A2ADAF821F186D900434337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A2ADAFD21F186D900434337 /* GroUberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroUberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2ADAFD21F186D900434337 /* RPI GroupRideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RPI GroupRideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ADB0121F186D900434337 /* GroUberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroUberUITests.swift; sourceTree = "<group>"; };
 		7A2ADB0321F186D900434337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A89839821FCD96B0099C7CD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +91,9 @@
 		7A2ADADF21F186D500434337 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A2ADADE21F186D500434337 /* GroUber.app */,
-				7A2ADAF221F186D900434337 /* GroUberTests.xctest */,
-				7A2ADAFD21F186D900434337 /* GroUberUITests.xctest */,
+				7A2ADADE21F186D500434337 /* RPI GroupRide.app */,
+				7A2ADAF221F186D900434337 /* RPI GroupRideTests.xctest */,
+				7A2ADAFD21F186D900434337 /* RPI GroupRideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +107,6 @@
 				836AEA2021FBB2AA0062FB39 /* HubViewController.swift */,
 				7A2ADAE821F186D900434337 /* Assets.xcassets */,
 				7A2ADAEA21F186D900434337 /* LaunchScreen.storyboard */,
-				41D650E222060AC4001C3928 /* GoogleService-Info.plist */,
 				7A2ADAED21F186D900434337 /* Info.plist */,
 				7A89839821FCD96B0099C7CD /* AboutViewController.swift */,
 			);
@@ -137,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7A2ADADD21F186D500434337 /* GroUber */ = {
+		7A2ADADD21F186D500434337 /* RPI GroupRide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A2ADB0621F186D900434337 /* Build configuration list for PBXNativeTarget "GroUber" */;
+			buildConfigurationList = 7A2ADB0621F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRide" */;
 			buildPhases = (
 				7A2ADADA21F186D500434337 /* Sources */,
 				7A2ADADB21F186D500434337 /* Frameworks */,
@@ -149,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = GroUber;
+			name = "RPI GroupRide";
 			productName = GroUber;
-			productReference = 7A2ADADE21F186D500434337 /* GroUber.app */;
+			productReference = 7A2ADADE21F186D500434337 /* RPI GroupRide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7A2ADAF121F186D900434337 /* GroUberTests */ = {
+		7A2ADAF121F186D900434337 /* RPI GroupRideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A2ADB0921F186D900434337 /* Build configuration list for PBXNativeTarget "GroUberTests" */;
+			buildConfigurationList = 7A2ADB0921F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRideTests" */;
 			buildPhases = (
 				7A2ADAEE21F186D900434337 /* Sources */,
 				7A2ADAEF21F186D900434337 /* Frameworks */,
@@ -167,14 +164,14 @@
 			dependencies = (
 				7A2ADAF421F186D900434337 /* PBXTargetDependency */,
 			);
-			name = GroUberTests;
+			name = "RPI GroupRideTests";
 			productName = GroUberTests;
-			productReference = 7A2ADAF221F186D900434337 /* GroUberTests.xctest */;
+			productReference = 7A2ADAF221F186D900434337 /* RPI GroupRideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7A2ADAFC21F186D900434337 /* GroUberUITests */ = {
+		7A2ADAFC21F186D900434337 /* RPI GroupRideUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A2ADB0C21F186D900434337 /* Build configuration list for PBXNativeTarget "GroUberUITests" */;
+			buildConfigurationList = 7A2ADB0C21F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRideUITests" */;
 			buildPhases = (
 				7A2ADAF921F186D900434337 /* Sources */,
 				7A2ADAFA21F186D900434337 /* Frameworks */,
@@ -185,9 +182,9 @@
 			dependencies = (
 				7A2ADAFF21F186D900434337 /* PBXTargetDependency */,
 			);
-			name = GroUberUITests;
+			name = "RPI GroupRideUITests";
 			productName = GroUberUITests;
-			productReference = 7A2ADAFD21F186D900434337 /* GroUberUITests.xctest */;
+			productReference = 7A2ADAFD21F186D900434337 /* RPI GroupRideUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7A2ADAD921F186D400434337 /* Build configuration list for PBXProject "GroUber" */;
+			buildConfigurationList = 7A2ADAD921F186D400434337 /* Build configuration list for PBXProject "RPI GroupRide" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7A2ADADD21F186D500434337 /* GroUber */,
-				7A2ADAF121F186D900434337 /* GroUberTests */,
-				7A2ADAFC21F186D900434337 /* GroUberUITests */,
+				7A2ADADD21F186D500434337 /* RPI GroupRide */,
+				7A2ADAF121F186D900434337 /* RPI GroupRideTests */,
+				7A2ADAFC21F186D900434337 /* RPI GroupRideUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +236,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2ADAEC21F186D900434337 /* LaunchScreen.storyboard in Resources */,
-				41D650E322060AC4001C3928 /* GoogleService-Info.plist in Resources */,
 				7A2ADAE921F186D900434337 /* Assets.xcassets in Resources */,
 				7A2ADAE721F186D500434337 /* Main.storyboard in Resources */,
 			);
@@ -294,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		7A2ADAF421F186D900434337 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7A2ADADD21F186D500434337 /* GroUber */;
+			target = 7A2ADADD21F186D500434337 /* RPI GroupRide */;
 			targetProxy = 7A2ADAF321F186D900434337 /* PBXContainerItemProxy */;
 		};
 		7A2ADAFF21F186D900434337 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7A2ADADD21F186D500434337 /* GroUber */;
+			target = 7A2ADADD21F186D500434337 /* RPI GroupRide */;
 			targetProxy = 7A2ADAFE21F186D900434337 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroUber.app/GroUber";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPI GroupRide.app/RPI GroupRide";
 			};
 			name = Debug;
 		};
@@ -512,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroUber.app/GroUber";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPI GroupRide.app/RPI GroupRide";
 			};
 			name = Release;
 		};
@@ -557,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7A2ADAD921F186D400434337 /* Build configuration list for PBXProject "GroUber" */ = {
+		7A2ADAD921F186D400434337 /* Build configuration list for PBXProject "RPI GroupRide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A2ADB0421F186D900434337 /* Debug */,
@@ -566,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A2ADB0621F186D900434337 /* Build configuration list for PBXNativeTarget "GroUber" */ = {
+		7A2ADB0621F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A2ADB0721F186D900434337 /* Debug */,
@@ -575,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A2ADB0921F186D900434337 /* Build configuration list for PBXNativeTarget "GroUberTests" */ = {
+		7A2ADB0921F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A2ADB0A21F186D900434337 /* Debug */,
@@ -584,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A2ADB0C21F186D900434337 /* Build configuration list for PBXNativeTarget "GroUberUITests" */ = {
+		7A2ADB0C21F186D900434337 /* Build configuration list for PBXNativeTarget "RPI GroupRideUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A2ADB0D21F186D900434337 /* Debug */,
