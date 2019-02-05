@@ -124,7 +124,7 @@
                                                 <state key="normal" title="Log In"/>
                                             </button>
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="i1Q-Kg-CoZ"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="gfK-Lw-u2w"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -136,7 +136,7 @@
                                 <accessibility key="accessibilityConfiguration" hint="RCSID" identifier="rcsId" label="RCSID"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zw3-HF-Lta">
                                 <rect key="frame" x="141" y="414" width="141" height="30"/>
@@ -213,9 +213,6 @@
                                 <rect key="frame" x="154" y="531" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="bUI-D4-hQu"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -279,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26m-u5-QqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="133"/>
+            <point key="canvasLocation" x="935" y="221"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="8MQ-GO-LCc">
@@ -322,6 +319,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bUI-D4-hQu"/>
+        <segue reference="gfK-Lw-u2w"/>
     </inferredMetricsTieBreakers>
 </document>
