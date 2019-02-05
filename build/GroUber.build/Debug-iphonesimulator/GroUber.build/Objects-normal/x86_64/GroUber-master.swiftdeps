@@ -1,0 +1,8 @@
+version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+options: "b978e9622cf166b6588cebe0df0dcdaf"
+build_time: [1549406074, 8679000]
+inputs:
+  "/Users/farukhsaidmuratov/Documents/GroupRideiOS/GroUber/ViewController.swift": [1549403394, 0]
+  "/Users/farukhsaidmuratov/Documents/GroupRideiOS/GroUber/HubViewController.swift": [1549403394, 0]
+  "/Users/farukhsaidmuratov/Documents/GroupRideiOS/GroUber/AppDelegate.swift": [1549405161, 0]
+  "/Users/farukhsaidmuratov/Documents/GroupRideiOS/GroUber/AboutViewController.swift": [1549403394, 0]
