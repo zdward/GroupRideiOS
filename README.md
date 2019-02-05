@@ -14,16 +14,23 @@ Tutorial of how to set up Firebase:
 - use in command line: sudo gem install cocoapods
 
 2. Init pod file
+    go to xcode project folder 
+    in terminal type: pod init
+    This creates a pod file to list all of the cocoa imports you would like to use 
+    
 
 3. inside pod file  below the last end write 
 pod 'Firebase/Core'
 pod 'Firebase'
 
+This is a list of all the imports needed to run this app
+
 4. In command line run, pod install 
-    - Will add all the firebase 
+    - Will add all the firebase import files
 
+5.  After firebase has been set up only use the .xcworkspace to make the build.
 
-
+Error Issue:
 If Build failed due to Could not build Objective-C module 'Firebase’:
 1. Quit Xcode.
 2. Delete project's temp files located at ~/Library/Developer/Xcode/DerivedData
