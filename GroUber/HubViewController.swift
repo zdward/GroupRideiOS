@@ -151,28 +151,23 @@ class HubViewController: UITableViewController {
     //deals with loading more cells when reach the bottom
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if tableView == self.tableView {
-            let lastElement = displayed_posts - 1
-            if indexPath.row == lastElement {
-                // handle your logic here to get more items, add it to dataSource and reload tableview
+            let lastSectionIndex = tableView.numberOfSections - 1
+            let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+            if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+                //add the spinner to the footer of the table
+                let spinner = UIActivityIndicatorView(style: .gray)
+                spinner.startAnimating()
+                spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
                 
-                //add indicator to screen
-                let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-                indicator.style = UIActivityIndicatorView.Style.gray
-                
-                tableView.beginUpdates()
-                tableView.insertRows(at: [IndexPath(row: displayed_posts, section: 0)], with: .automatic) //append the activity indicator to bottom of table
-                //indicator.center = self.view.center //hopefully will center in the cell
-                //self.view.addSubview(indicator)
-                tableView.endUpdates()
-                
-                indicator.startAnimating()
+                self.tableView.tableFooterView = spinner
+                self.tableView.tableFooterView?.isHidden = false
                 
                 tableView.beginUpdates()
                 //in this area, query for more posts to add to the table
                 //tableView.insertRows(at: [IndexPath(row: yourArray.count-1, section: 0)], with: .automatic)
                 tableView.endUpdates()
                 
-                indicator.stopAnimating() //stop animation when finished
+                //self.tableView.tableFooterView?.isHidden = true //call this after finishing update on table
             }
         }
     }
