@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HubViewController: UITableViewController {
+class HubViewController: UITableViewController, UISearchResultsUpdating {
 
+    
     //variables
     var refresher: UIRefreshControl!
     var Settings_Table: UITableView!
@@ -26,15 +27,24 @@ class HubViewController: UITableViewController {
     //var imageFiles = [PFFile]() //will be for watever database returns
     var displayed_posts = 5 //will set this to the number of posts to be displayed in the feed
     
+    //for searching
+    let searchController = UISearchController(searchResultsController: nil)
+    var searchResults : [(title: String, image: String)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //for the button
+        let title_button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
+        //title_button.backgroundColor = .green
+        title_button.center.x = UIScreen.main.bounds.width / 2
+        title_button.center.y = 40 //bad will be replaced
+        title_button.setTitleColor(UIColor.black, for: .normal)
+        title_button.titleLabel?.font = UIFont(name: "Avenir-Black", size: 20)
+        title_button.setTitle("GroupRide", for: .normal)
+        title_button.addTarget(self, action: #selector(scrollToTop), for: .touchUpInside)
+        
+        self.navigationController?.view.addSubview(title_button)
         
         //for the refresher buffer thingy
         refresher = UIRefreshControl()
@@ -46,6 +56,28 @@ class HubViewController: UITableViewController {
         Cover_View.backgroundColor = UIColor.black
         Cover_View.alpha = 0
         self.tabBarController!.view.addSubview(Cover_View)
+        
+        
+        searchController.searchResultsUpdater = self
+        self.definesPresentationContext = true
+        
+        // Place the search bar in the table view's header.
+        self.tableView.tableHeaderView = searchController.searchBar
+        
+        // Set the content offset to the height of the search bar's height
+        // to hide it when the view is first presented.
+        self.tableView.contentOffset = CGPoint(x: 0, y: searchController.searchBar.frame.height)
+        self.searchController.searchBar.barTintColor = UIColor.white
+        for view in self.searchController.searchBar.subviews {
+            for subview in view.subviews {
+                 if let textField = subview as? UITextField {
+                    //for the background
+                    textField.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+                    //use the code below if you want to change the color of placeholder
+                }
+            }
+        }
+        
         
         Settings_Table = CustomTable(frame: CGRect(x: -300, y: 0, width: 300, height: UIScreen.main.bounds.height))
         Settings_Table.dataSource = self
@@ -266,50 +298,29 @@ class HubViewController: UITableViewController {
         can_touch_settings = false
     }
     
-  
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // ---- SEARCH BAR ----
+    func filterContent(for searchText: String) {
+        // Update the searchResults array with matches
+        // in our entries based on the title value.
+        /*searchResults = entries.filter({ (title: String, image: String) -> Bool in
+            let match = title.range(of: searchText, options: .caseInsensitive)
+            // Return the tuple if the range contains a match.
+            return match != nil
+        })*/
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // If the search bar contains text, filter our data with the string
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            // Reload the table view with the search result data.
+            self.tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    //---- scroll to top button ----
+    @objc func scrollToTop(sender: UIButton!) {
+        print("Button tapped")
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

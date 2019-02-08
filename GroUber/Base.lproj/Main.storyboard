@@ -307,7 +307,7 @@
             </objects>
             <point key="canvasLocation" x="1580" y="-598"/>
         </scene>
-        <!--GroupRide-->
+        <!--Hub View Controller-->
         <scene sceneID="oHb-sL-JJH">
             <objects>
                 <tableViewController id="ico-qY-oGe" customClass="HubViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
@@ -368,7 +368,7 @@
                             <outlet property="delegate" destination="ico-qY-oGe" id="rlh-DR-QMY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GroupRide" id="RgY-TD-PEb"/>
+                    <navigationItem key="navigationItem" id="RgY-TD-PEb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAp-AC-M0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
