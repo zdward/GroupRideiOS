@@ -37,14 +37,12 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         //for the button
         let title_button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
         //title_button.backgroundColor = .green
-        title_button.center.x = UIScreen.main.bounds.width / 2
-        title_button.center.y = 40 //bad will be replaced
         title_button.setTitleColor(UIColor.black, for: .normal)
         title_button.titleLabel?.font = UIFont(name: "Avenir-Black", size: 20)
         title_button.setTitle("GroupRide", for: .normal)
         title_button.addTarget(self, action: #selector(scrollToTop), for: .touchUpInside)
-        
-        self.navigationController?.view.addSubview(title_button)
+        self.navigationController?.topViewController?.navigationItem.titleView = title_button //add to the view
+
         
         //for the refresher buffer thingy
         refresher = UIRefreshControl()
@@ -208,8 +206,8 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
     // ---- Gesture Work ----
     //for the coverview, with grayout, if touching and the menu open close the menu
     @objc func handle_tap(gesture: UITapGestureRecognizer) {
-        location = gesture.location(in: view)
-        //print(location.x)
+        location = gesture.location(in: gesture.view)
+        print(location.x)
         if menu_open && location.x > Settings_Table.bounds.width {
             settings_close()
         }
