@@ -19,6 +19,13 @@ class HubViewController: UITableViewController {
     var location:CGPoint = CGPoint(x: 0, y: 0)
     var menu_offset: CGFloat = 0
     
+    //for the hub downloads
+    var users = [String: String]() //to store friended users
+    var messages = [String]()
+    var usernames = [String]()
+    //var imageFiles = [PFFile]() //will be for watever database returns
+    var displayed_posts = 5 //will set this to the number of posts to be displayed in the feed
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,30 +79,39 @@ class HubViewController: UITableViewController {
         if tableView == Settings_Table {
             return 6
         }
-        return 1
+        //add code to return a specific number of posts and if scroll down can load more
+        if displayed_posts >= 25 {
+            return 25
+        }
+        return displayed_posts //if the user can only see less than 25 posts, can change
     }
     
     //create the cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "settings_cell")
         if tableView == Settings_Table {
+            let settings_cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "settings_cell")
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Edit Profile"
+                settings_cell.textLabel?.text = "Edit Profile"
             } else if indexPath.row == 1 {
-                cell.textLabel?.text = "Notifications"
+                settings_cell.textLabel?.text = "Notifications"
             } else if indexPath.row == 2 {
-                cell.textLabel?.text = "Privacy Settings"
+                settings_cell.textLabel?.text = "Privacy Settings"
             } else if indexPath.row == 3 {
-                cell.textLabel?.text = "Security Settings"
+                settings_cell.textLabel?.text = "Security Settings"
             } else if indexPath.row == 4 {
-                cell.textLabel?.text = "Add Friends"
+                settings_cell.textLabel?.text = "Add Friends"
             } else if indexPath.row == 5 {
-                cell.textLabel?.text = "Log Out"
+                settings_cell.textLabel?.text = "Log Out"
             }
-        } else {
-            cell.textLabel?.text = "fuck this shit"
+            return settings_cell
         }
-        return cell
+        
+        //add code below for the feed
+        let hub_cell = tableView.dequeueReusableCell(withIdentifier: "post_cell", for: indexPath) as! FeedCell
+        hub_cell.ProfileName.text = "Alex Chuckas"
+        //hub_cell.ProfileImage.image = UIImage(named: <#T##String#>) //will be getting image from the database
+        hub_cell.MessageLabel.text = "HELP ME I AM IN DESPERATE NEED OF TACO BELL, IF YOU CANNOT HELP ME THEN I WILL DIE, DO YOU WANT TO BE THE SOLE REASON FOR A FUNERAL?!?!? AHH??? AHHHHH!!!?!?"
+        return hub_cell
     }
     
     //cell functionality
@@ -132,6 +148,35 @@ class HubViewController: UITableViewController {
         }
     }
     
+    //deals with loading more cells when reach the bottom
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView == self.tableView {
+            let lastElement = displayed_posts - 1
+            if indexPath.row == lastElement {
+                // handle your logic here to get more items, add it to dataSource and reload tableview
+                
+                //add indicator to screen
+                let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                indicator.style = UIActivityIndicatorView.Style.gray
+                
+                tableView.beginUpdates()
+                tableView.insertRows(at: [IndexPath(row: displayed_posts, section: 0)], with: .automatic) //append the activity indicator to bottom of table
+                //indicator.center = self.view.center //hopefully will center in the cell
+                //self.view.addSubview(indicator)
+                tableView.endUpdates()
+                
+                indicator.startAnimating()
+                
+                tableView.beginUpdates()
+                //in this area, query for more posts to add to the table
+                //tableView.insertRows(at: [IndexPath(row: yourArray.count-1, section: 0)], with: .automatic)
+                tableView.endUpdates()
+                
+                indicator.stopAnimating() //stop animation when finished
+            }
+        }
+    }
+    
     // ---- Gesture Work ----
     //for the coverview, with grayout, if touching and the menu open close the menu
     @objc func handle_tap(gesture: UITapGestureRecognizer) {
@@ -162,27 +207,23 @@ class HubViewController: UITableViewController {
             let velocity = gesture.velocity(in: self.view)
             if velocity.x > 1000 && !menu_open{
                 settings_open()
+                can_touch_settings = false
                 return
             } else if velocity.x < -1000 && menu_open {
                 settings_close()
-                return
-            }
-            
-            //actual panning
-            Settings_Table.center.x = location.x + menu_offset
-            //print(Settings_Table.center.x)
-            
-            //print(Settings_Table.center.x)
-            
-            if Settings_Table.center.x < -150 {
-                Settings_Table.center.x = -150
                 can_touch_settings = false
-            } else if Settings_Table.center.x > 150 {
-                Settings_Table.center.x = 150
+                return
+            } else {
+                //actual panning
+                Settings_Table.center.x = location.x + menu_offset
+                if Settings_Table.center.x < -150 {
+                    Settings_Table.center.x = -150
+                    can_touch_settings = false
+                } else if Settings_Table.center.x > 150 {
+                    Settings_Table.center.x = 150
+                }
+                Cover_View.alpha = (0.6 / Settings_Table.bounds.width) * (Settings_Table.center.x + Settings_Table.bounds.width / 2)
             }
-            
-            Cover_View.alpha = (0.6 / Settings_Table.bounds.width) * (Settings_Table.center.x + Settings_Table.bounds.width / 2)
-            
         }
         //touches ended equivalent, deals with final state of menu so it does not sit half open/close
         if (gesture.state == .ended) {
