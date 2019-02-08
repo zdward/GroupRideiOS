@@ -111,6 +111,7 @@ class HubViewController: UITableViewController {
         hub_cell.ProfileName.text = "Alex Chuckas"
         //hub_cell.ProfileImage.image = UIImage(named: <#T##String#>) //will be getting image from the database
         hub_cell.MessageLabel.text = "HELP ME I AM IN DESPERATE NEED OF TACO BELL, IF YOU CANNOT HELP ME THEN I WILL DIE, DO YOU WANT TO BE THE SOLE REASON FOR A FUNERAL?!?!? AHH??? AHHHHH!!!?!?"
+        hub_cell.selectionStyle = .none
         return hub_cell
     }
     
