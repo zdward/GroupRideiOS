@@ -151,6 +151,7 @@ class HubViewController: UITableViewController {
             //if within 1.8 of screen bounds we can open the settings menu
             if location.x <= UIScreen.main.bounds.width / 8 {
                 can_touch_settings = true
+                Settings_Table.center.x = location.x - Settings_Table.bounds.width / 2
             }
             menu_offset = Settings_Table.center.x - location.x
         //gesture changed and touching settings allow, essentially touchesmoved
