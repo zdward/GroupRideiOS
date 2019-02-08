@@ -41,6 +41,8 @@ class HubViewController: UITableViewController {
         self.tabBarController!.view.addSubview(Cover_View)
         
         Settings_Table = CustomTable(frame: CGRect(x: -300, y: 0, width: 300, height: UIScreen.main.bounds.height))
+        Settings_Table.dataSource = self
+        Settings_Table.delegate = self
         //Settings_Table.backgroundColor = UIColor.gray
         Settings_Table.separatorColor = UIColor.clear
         self.tabBarController!.view.addSubview(Settings_Table)
@@ -65,38 +67,84 @@ class HubViewController: UITableViewController {
     // MARK: - Table view data source
 
     // ---- Table Setup ----
+    //choose number of allowed cells (default)
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if tableView == Settings_Table {
+            return 6
+        }
+        return 1
     }
     
+    //create the cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "settings_cell")
-        cell.textLabel?.text = "fuck this shit"
+        if tableView == Settings_Table {
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "Edit Profile"
+            } else if indexPath.row == 1 {
+                cell.textLabel?.text = "Notifications"
+            } else if indexPath.row == 2 {
+                cell.textLabel?.text = "Privacy Settings"
+            } else if indexPath.row == 3 {
+                cell.textLabel?.text = "Security Settings"
+            } else if indexPath.row == 4 {
+                cell.textLabel?.text = "Add Friends"
+            } else if indexPath.row == 5 {
+                cell.textLabel?.text = "Log Out"
+            }
+        } else {
+            cell.textLabel?.text = "fuck this shit"
+        }
         return cell
     }
     
+    //cell functionality
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == Settings_Table {
+            if indexPath.row == 0 {
+                //configure action when tap cell 1
+                
+            } else if indexPath.row == 1 {
+                //configure action when tap cell 2
+                
+            } else if indexPath.row == 2 {
+                //configure action when tap cell 3
+                
+            } else if indexPath.row == 3 {
+                //configure action when tap cell 4
+                
+            } else if indexPath.row == 4 {
+                //configure action when tap cell 5
+                
+            } else if indexPath.row == 5 {
+                //configure action when tap cell 6
+                
+            }
+        }
+    }
+    
     // ---- Gesture Work ----
+    //for the coverview, with grayout, if touching and the menu open close the menu
     @objc func handle_tap(gesture: UITapGestureRecognizer) {
         location = gesture.location(in: view)
-        print(location.x)
+        //print(location.x)
         if menu_open && location.x > Settings_Table.bounds.width {
             settings_close()
         }
     }
     
+    //deals with pulling the settings menu out from the side. this gesture is bar of the main view controller
     @objc func handle_pan(gesture: UIPanGestureRecognizer) {
-        //let touch = gesture.location(in: tableView)
-        //print(touch)
-        //menu_offset = Settings_Table.center.x - gesture.location(in: tableView).x
-        //print(menu_offset)
+        //essentially same as touchesbegan
         if(gesture.state == .began) {
             location = gesture.location(in: tableView)
             
+            //if within 1.8 of screen bounds we can open the settings menu
             if location.x <= UIScreen.main.bounds.width / 8 {
                 can_touch_settings = true
             }
             menu_offset = Settings_Table.center.x - location.x
-            print(menu_offset)
+        //gesture changed and touching settings allow, essentially touchesmoved
         } else if (gesture.state == .changed) && can_touch_settings {
             //velocity
             //print("uerm")
@@ -126,6 +174,7 @@ class HubViewController: UITableViewController {
             Cover_View.alpha = (0.6 / Settings_Table.bounds.width) * (Settings_Table.center.x + Settings_Table.bounds.width / 2)
             
         }
+        //touches ended equivalent, deals with final state of menu so it does not sit half open/close
         if (gesture.state == .ended) {
             if !menu_open {
                 if Settings_Table.center.x >= 100 {
@@ -139,44 +188,6 @@ class HubViewController: UITableViewController {
                 } else {
                     settings_open()
                 }
-            }
-        }
-    }
-    
-    /*
-    // ---- touch functions ----
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        location = touch.location(in: tableView)
-        print("\n---\n")
-        print(location)
-        
-        if location.x <= UIScreen.main.bounds.width / 8 {
-            can_touch_settings = true
-        }
-        
-        menu_offset = Settings_Table.center.x - location.x
-        
-    }*/
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        location = touch.location(in: self.tableView)
-        //print(location.x)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !menu_open {
-            if Settings_Table.center.x >= 100 {
-                settings_open()
-            } else {
-                settings_close()
-            }
-        } else {
-            if Settings_Table.center.x <= -100 {
-                settings_close()
-            } else {
-                settings_open()
             }
         }
     }
@@ -208,23 +219,6 @@ class HubViewController: UITableViewController {
         can_touch_settings = false
     }
     
-    func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let hitView = hitTest(point, with: event)
-        if hitView == Cover_View {
-            return nil
-        }
-        return hitView
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

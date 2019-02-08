@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CustomTable: UITableView {
+class CustomTable: UITableView{
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +32,18 @@ class CustomTable: UITableView {
         }
         return hitView
     }
+    /*
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\n\n\nhi")
+        return 5
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("\n\n\ndumb")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "settings_cell")
+        cell.textLabel?.text = "oh boi"
+        return cell
+    }*/
 
 
 }
