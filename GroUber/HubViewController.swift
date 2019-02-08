@@ -117,9 +117,18 @@ class HubViewController: UITableViewController {
                 //configure action when tap cell 5
                 
             } else if indexPath.row == 5 {
-                //configure action when tap cell 6
-                
+                //configure action when tap cell 6 - logout
+                let alert = UIAlertController(title: "Log out of (profile name)?", message: "", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "Log Out", style: .default, handler: { (action) in
+                    //complete logout action from database/userdefaults saved login
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
@@ -219,6 +228,7 @@ class HubViewController: UITableViewController {
         can_touch_settings = false
     }
     
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
