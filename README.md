@@ -23,4 +23,8 @@ Click the identity inspector which is the button that looks like a newspaper, if
 
 In this panel hover to the "class" dropdown menu underneath "Custom Class." Scroll to "ViewController" and select the class. 
 
-***If this was button was created in a view controller that is not your first view controller in your prohect:***
+TO BE COMPLETED
+
+***If this was button was created in a view controller that is not your first view controller in your project:***
+
+TO BE COMPLETED
