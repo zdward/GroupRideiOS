@@ -63,7 +63,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func About_Action(_ sender: Any) {
         //buffering, cannot interact with screen
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -81,11 +80,8 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 }
-
