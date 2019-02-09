@@ -7,6 +7,8 @@ The application acts as a social network. Students can make posts about an Uber/
 Contributors:
 Zachary Ward, Paul Lim, Kevin Kim, Farukh Saidmuratov, Alexis Joseph, Karen Mu
 
+
+
 ***A Guide to Creating Buttons in Xcode9 for those Who Have Never developed Apps*** 
 Authored by Farukh
 
