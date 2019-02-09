@@ -125,7 +125,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RCS ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FA3-9J-vBO">
-                                <rect key="frame" x="145" y="246" width="141" height="30"/>
+                                <rect key="frame" x="146" y="246" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="RCSID" identifier="rcsId" label="RCSID"/>
                                 <nil key="textColor"/>
@@ -133,7 +133,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zw3-HF-Lta">
-                                <rect key="frame" x="145" y="398" width="141" height="30"/>
+                                <rect key="frame" x="146" y="398" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Confirm Password" identifier="confirm_password" label="Confirm Password"/>
                                 <nil key="textColor"/>
@@ -141,7 +141,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0l-ZZ-I52">
-                                <rect key="frame" x="145" y="360" width="141" height="30"/>
+                                <rect key="frame" x="146" y="360" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Create Password" identifier="create_password" label="Create Password"/>
                                 <nil key="textColor"/>
@@ -149,7 +149,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-hz-Lpc">
-                                <rect key="frame" x="145" y="284" width="141" height="30"/>
+                                <rect key="frame" x="146" y="284" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="fname" identifier="firstName" label="fname"/>
                                 <nil key="textColor"/>
@@ -157,7 +157,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xP-xR-l4Z">
-                                <rect key="frame" x="145" y="322" width="141" height="30"/>
+                                <rect key="frame" x="146" y="322" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="lname" identifier="lastName" label="lname"/>
                                 <nil key="textColor"/>
@@ -165,7 +165,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="family-name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c77-2j-qjI">
-                                <rect key="frame" x="145" y="208" width="141" height="30"/>
+                                <rect key="frame" x="146" y="208" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="create_account_user" identifier="create_account_user" label="Username"/>
                                 <nil key="textColor"/>
@@ -219,13 +219,21 @@
                                 </accessibility>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <action selector="showAlert" destination="IZt-6e-FaY" eventType="touchUpInside" id="lrp-Kl-nIh"/>
+                                    <action selector="CreateAccount_Button_Action:" destination="IZt-6e-FaY" eventType="touchUpInside" id="l7O-Nu-liS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dtz-tZ-4go"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="Zw3-HF-Lta" id="0Bk-Un-yfT"/>
+                        <outlet property="fName" destination="4Pl-hz-Lpc" id="Ozy-1v-Ndg"/>
+                        <outlet property="lName" destination="0xP-xR-l4Z" id="jrd-g2-jRX"/>
+                        <outlet property="password" destination="M0l-ZZ-I52" id="5xG-a4-hjp"/>
+                        <outlet property="rcsID" destination="FA3-9J-vBO" id="TYB-U4-DC9"/>
+                        <outlet property="userName" destination="c77-2j-qjI" id="9ZI-k1-iY8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVh-Dg-sfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
