@@ -9,22 +9,41 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
-    
-    @IBOutlet weak var username_field: UITextField!
-    @IBOutlet weak var password_field: UITextField!
-    @IBOutlet weak var confirm_password_field: UITextField!
-    @IBOutlet weak var rcsID_field: UITextField!
 
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var rcsID: UITextField!
+    @IBOutlet weak var fName: UITextField!
+    @IBOutlet weak var lName: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func showAlert() {
-        print("Twelve pounds of used q-tips have now been shipped to your house.")
+    func createAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
-
+    
+    @IBAction func CreateAccount_Button_Action(_ sender: UIButton) {
+        if userName.text == "" || password.text == "" ||  rcsID.text == "" || fName.text == "" || lName.text == "" || confirmPassword.text == "" {
+            createAlert(title: "Please fill in all fields", message: "")
+        }
+        else if password.text != confirmPassword.text {
+            createAlert(title: "Please ensure that passwords match", message: "")
+        }
+        else {
+            createAlert(title: "Email Sent!", message: "")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
