@@ -40,7 +40,7 @@ class CreateAccountViewController: UIViewController {
             createAlert(title: "Please ensure that passwords match", message: "")
         }
         else {
-            createAlert(title: "Email Sent!", message: "")
+            createAlert(title: "Confirmation Sent", message: "Please check your email")
         }
     }
     
