@@ -18,6 +18,7 @@ You can create buttons by going over to the top right of Xcode IDE and clicking 
 
 From there you scroll down until you see the "Button" object which is be a blue "B". Drag that object in the desired location in your view controller. <br/><img width="700" alt="button" src="https://user-images.githubusercontent.com/26397102/52537662-365c9880-2d37-11e9-9783-c07b2e4dd092.png"><br/>
 
+</br>
 ### ***If this button was created in your first view controller, and you don't have any other view controllers in your project...*** ###
 
 Click on the view controller that holds your button. Go over to the rightmost panel. <br/><img width="260" alt="rightmostpanel" src="https://user-images.githubusercontent.com/26397102/52537675-6015bf80-2d37-11e9-8d2a-fe6716222d8b.png"><br/>
@@ -43,6 +44,7 @@ From there, you can specify any action you want. For example: send the user an o
 <br/><img width="646" alt="message" src="https://user-images.githubusercontent.com/26397102/52537726-b71b9480-2d37-11e9-98ce-54b99e821bc1.png" class="center"><br/>
 
 
+</br>
 ### ***If this was button was created in a view controller that is not the first view controller in your project...*** ###
 
 TO BE COMPLETED
