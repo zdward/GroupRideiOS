@@ -8,18 +8,20 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var rcsID: UITextField!
-    @IBOutlet weak var fName: UITextField!
-    @IBOutlet weak var lName: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var userName_field: UITextField!
+    @IBOutlet weak var rcsID_field: UITextField!
+    @IBOutlet weak var fName_field: UITextField!
+    @IBOutlet weak var lName_field: UITextField!
+    @IBOutlet weak var password_field: UITextField!
+    @IBOutlet weak var confirmPassword_field: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Allow "password" and "confirm password" text field to interact with view
+        password_field.delegate = self
+        confirmPassword_field.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -32,16 +34,18 @@ class CreateAccountViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func CreateAccount_Button_Action(_ sender: UIButton) {
-        if userName.text == "" || password.text == "" ||  rcsID.text == "" || fName.text == "" || lName.text == "" || confirmPassword.text == "" {
+    @IBAction func CreateAccount_Action_Button(_ sender: Any) {
+        if userName_field.text == "" || password_field.text == "" ||  rcsID_field.text == "" || fName_field.text == "" || lName_field.text == "" || confirmPassword_field.text == "" {
             createAlert(title: "Please fill in all fields", message: "")
         }
-        else if password.text != confirmPassword.text {
-            createAlert(title: "Please ensure that passwords match", message: "")
+        else if password_field.text != confirmPassword_field.text {
+            createAlert(title: "Please ensure that both passwords match", message: "")
+            confirmPassword_field.resignFirstResponder()
         }
         else {
             createAlert(title: "Confirmation Sent", message: "Please check your email")
         }
+
     }
     
     /*
