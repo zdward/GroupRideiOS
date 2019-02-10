@@ -34,7 +34,7 @@ After doing this, click the "Show Assistant Editor" toggle, which is the button 
 
 This will open up the viewcontroller next to your storyboard.
 
-While holding the "Alt" key, click and drag your button to your "ViewController.swift" document to create a function that will control an action. 
+While holding the "control" key, click and drag your button to your "ViewController.swift" document to create a function that will control an action. 
 <br/><img width="600" alt="creatraction" src="https://user-images.githubusercontent.com/26397102/52537717-97846c00-2d37-11e9-9ed1-d604983b8dac.png">
 <img width="602" alt="actionfunction" src="https://user-images.githubusercontent.com/26397102/52537719-a9660f00-2d37-11e9-9e9d-594c1af2b416.png"><br/>
 
