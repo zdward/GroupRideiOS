@@ -36,8 +36,8 @@ After doing this, click the "Show Assistant Editor" toggle, which is the button 
 This will open up the viewcontroller next to your storyboard.
 
 While holding the "Alt" key, click and drag your button to your "ViewController.swift" document to create a function that will control an action. 
-<br/><img width="600" alt="creatraction" src="https://user-images.githubusercontent.com/26397102/52537717-97846c00-2d37-11e9-9ed1-d604983b8dac.png"class="left">
-<img width="602" alt="actionfunction" src="https://user-images.githubusercontent.com/26397102/52537719-a9660f00-2d37-11e9-9e9d-594c1af2b416.png" class="right"><br/>
+<br/><img width="600" alt="creatraction" src="https://user-images.githubusercontent.com/26397102/52537717-97846c00-2d37-11e9-9ed1-d604983b8dac.png">
+<img width="602" alt="actionfunction" src="https://user-images.githubusercontent.com/26397102/52537719-a9660f00-2d37-11e9-9e9d-594c1af2b416.png"><br/>
 
 From there, you can specify any action you want. For example: send the user an on-screen message. 
 <br/><img width="646" alt="message" src="https://user-images.githubusercontent.com/26397102/52537726-b71b9480-2d37-11e9-98ce-54b99e821bc1.png" class="center"><br/>
