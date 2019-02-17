@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class ViewController: UIViewController {
     
     
@@ -28,42 +28,26 @@ class ViewController: UIViewController {
     }
     
     
-    //when the login button is pressed
-    @IBAction func Login_Button_Action(_ sender: Any) {
-        //Alex's addition: When the fields are blank, an error is returned
-        if username_field.text == "" || password_field.text == "" {
-            createAlert(title: "ERROR", message: "Invalid Username/Password")
-            
-        } else {
-            
-            //buffering, cannot interact with screen
-            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.style = UIActivityIndicatorView.Style.gray
-            view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            
-            
-            //this will be the code to get the username and password from the server and then login to their profile
-            if signup_mode {
-                //create a user utilizing the database
-                self.activityIndicator.stopAnimating() //temp
-                UIApplication.shared.endIgnoringInteractionEvents() //temp
-                performSegue(withIdentifier: "Login_Segue", sender: nil)
+    //The login function
+    @IBAction func Login(_ sender: Any) {
+        //extracts the info from email text-field
+        var email = String(username_field.text!)
+        email = email + "@rpi.edu";
+        //extracts the info from password text-field
+        var password = String(password_field.text!)
+        password = password + "_";
+        //Firebase's sign-in function
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if error != nil{
+                print("Error logging in user: \(error!.localizedDescription)");
+                self.createAlert(title: "ERROR", message: "Invalid Username/Password!")
             } else {
-          //fetch for user and if exists, login
-                self.activityIndicator.stopAnimating() //temp
-                UIApplication.shared.endIgnoringInteractionEvents() //temp
-                performSegue(withIdentifier: "Login_Segue", sender: nil)
+                self.performSegue(withIdentifier: "Login_Segue", sender: nil)
             }
-            
         }
-        
     }
     
-    
+    //Takes you to the about page
     @IBAction func About_Action(_ sender: Any) {
         //buffering, cannot interact with screen
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -80,7 +64,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "About_Segue", sender: nil)
         
     }
-    
+    //Takes you to the register page
     @IBAction func register(_ sender: Any) {
         //buffering, cannot interact with screen
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -99,6 +83,10 @@ class ViewController: UIViewController {
         }
     }
     
+    //added so this button at least does something. We don't want any dead buttons.
+    @IBAction func forgot_password(_ sender: Any) {
+        createAlert(title: "ERROR", message: "We haven't implemented this feature yet. For now, register a new account!")
+    }
     
     
     override func viewDidLoad() {
