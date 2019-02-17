@@ -81,6 +81,24 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func register(_ sender: Any) {
+        //buffering, cannot interact with screen
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        
+        self.activityIndicator.stopAnimating() //temp
+        UIApplication.shared.endIgnoringInteractionEvents() //temp
+        DispatchQueue.main.async{
+            self.performSegue(withIdentifier: "create_account", sender: self)
+        }
+    }
+    
     
     
     override func viewDidLoad() {
