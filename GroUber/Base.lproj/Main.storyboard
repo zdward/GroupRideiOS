@@ -39,13 +39,6 @@
                                     <action selector="forgot_password:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VxS-gY-vs5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv8-Pb-sDZ">
-                                <rect key="frame" x="299" y="42" width="104" height="30"/>
-                                <state key="normal" title="About GroUber"/>
-                                <connections>
-                                    <action selector="About_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWT-1T-Dfh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEn-ur-iBS">
                                 <rect key="frame" x="187" y="353" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
@@ -63,6 +56,13 @@
                                     <segue destination="hu4-fe-ZtH" kind="show" id="20W-UW-6Id"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv8-Pb-sDZ">
+                                <rect key="frame" x="286" y="34" width="118" height="30"/>
+                                <state key="normal" title="About GroupRide"/>
+                                <connections>
+                                    <action selector="About_Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWT-1T-Dfh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" hint="Password" identifier="passCode" label="Pass">
@@ -78,8 +78,8 @@
                             <constraint firstItem="BBM-uH-fH3" firstAttribute="centerX" secondItem="5v8-R5-u0j" secondAttribute="centerX" id="KOa-eH-Iow"/>
                             <constraint firstItem="SVa-73-0GO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-139" id="M61-jJ-OL1"/>
                             <constraint firstItem="BBM-uH-fH3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="QfJ-YR-Pa9"/>
-                            <constraint firstItem="Zv8-Pb-sDZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="SRO-pe-suQ"/>
-                            <constraint firstItem="Zv8-Pb-sDZ" firstAttribute="leading" secondItem="5v8-R5-u0j" secondAttribute="trailing" constant="37" id="UxA-5r-fjj"/>
+                            <constraint firstItem="Zv8-Pb-sDZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="SRO-pe-suQ"/>
+                            <constraint firstItem="Zv8-Pb-sDZ" firstAttribute="leading" secondItem="5v8-R5-u0j" secondAttribute="trailing" constant="24" id="UxA-5r-fjj"/>
                             <constraint firstItem="Uic-AD-fSM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="V7f-c6-pnU"/>
                             <constraint firstItem="Uic-AD-fSM" firstAttribute="top" secondItem="FEn-ur-iBS" secondAttribute="bottom" constant="51" id="WhH-xE-yFu"/>
                             <constraint firstItem="SVa-73-0GO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xu4-kQ-2Wx"/>
