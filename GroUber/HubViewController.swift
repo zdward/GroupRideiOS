@@ -138,9 +138,9 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         
         //add code below for the feed
         let hub_cell = tableView.dequeueReusableCell(withIdentifier: "post_cell", for: indexPath) as! FeedCell
-        hub_cell.ProfileName.text = "Alex Chuckas"
+        hub_cell.ProfileName.text = "Zachary Ward"
         //hub_cell.ProfileImage.image = UIImage(named: <#T##String#>) //will be getting image from the database
-        hub_cell.MessageLabel.text = "HELP ME I AM IN DESPERATE NEED OF TACO BELL, IF YOU CANNOT HELP ME THEN I WILL DIE, DO YOU WANT TO BE THE SOLE REASON FOR A FUNERAL?!?!? AHH??? AHHHHH!!!?!?"
+        hub_cell.MessageLabel.text = "Looking for a GroupRide to Crossgates at 4:00pm on 3/4/19"
         hub_cell.selectionStyle = .none
         return hub_cell
     }
