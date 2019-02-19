@@ -25,6 +25,13 @@ class CustomTable: UITableView{
         // Drawing code
     }
     
+    /*
+     * Description: Makes it so touch commands pass through the table
+     *
+     * @param  position on screen, gesture event
+     * @return returns a view that will accept the touch instead
+     * @author Alex Chuckas
+     */
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let hitView = super.hitTest(point, with: event)
         if hitView == self {

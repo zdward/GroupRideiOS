@@ -31,6 +31,23 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
     let searchController = UISearchController(searchResultsController: nil)
     var searchResults : [(title: String, image: String)] = []
     
+    /**
+     * Description: when viewcontroller loads, sets up view and subviews to be used by other
+     * functions
+     *
+     * Coverview: gray out background when settings menu opened
+     *
+     * Refresher: spinning wheel for when table view pulled up to refresh
+     *
+     * Searchbar: added to top of table for searching posts
+     *
+     * Settings Table: user can swipe from left of screen or tap button in top
+     * left to open menu. Contains segues to other controllers.
+     *
+     * @param  called on viewcontroller load, none
+     * @return none
+     * @author Alex Chuckas
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,7 +121,13 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
     // MARK: - Table view data source
 
     // ---- Table Setup ----
-    //choose number of allowed cells (default)
+    /*
+     * Description: choose the number of cells allowed for the hub table (default)
+     *
+     * @param  tableview and number of rows initially set
+     * @return all the possible cells
+     * @author Alex Chuckas
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == Settings_Table {
             return 6
@@ -116,7 +139,14 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         return displayed_posts //if the user can only see less than 25 posts, can change
     }
     
-    //create the cells
+    /*
+     * Description: Create specific cells depending on which table is being
+     * used. For settings, simply change text, for hub, deal with loaded posts.
+     *
+     * @param  tableview and location of cell in table
+     * @return specified cell type and fill
+     * @author Alex Chuckas
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == Settings_Table {
             let settings_cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "settings_cell")
@@ -145,7 +175,14 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         return hub_cell
     }
     
-    //cell functionality
+    /*
+     * Description: allow for cells to be tapped and have specific function.
+     * primarily used for selecting and segueing.
+     *
+     * @param  tableview and position of cell in table
+     * @return none
+     * @author Alex Chuckas
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == Settings_Table {
             if indexPath.row == 0 {
@@ -179,7 +216,15 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    //deals with loading more cells when reach the bottom
+    /*
+     * Description: When the user scrolls bellow a certain point in the hub table,
+     * load in more cells from the database. Also show buffer pinwheel. Called
+     * when a cell is shown on screen.
+     *
+     * @param  tableview, cell to soon be displayed, position of cell
+     * @return none
+     * @author Alex Chuckas
+     */
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if tableView == self.tableView {
             let lastSectionIndex = tableView.numberOfSections - 1
@@ -204,7 +249,14 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     // ---- Gesture Work ----
-    //for the coverview, with grayout, if touching and the menu open close the menu
+    /*
+     * Description: tap gesture on goverview, will close settings menu
+     * if tapped when settings menu open
+     *
+     * @param  tap gesture on coverview only
+     * @return none
+     * @author Alex Chuckas
+     */
     @objc func handle_tap(gesture: UITapGestureRecognizer) {
         location = gesture.location(in: gesture.view)
         print(location.x)
@@ -213,7 +265,17 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    //deals with pulling the settings menu out from the side. this gesture is bar of the main view controller
+    /*
+     * Description: deals with pulling the settings menu out from the side
+     * of the screen with a pan gesture. Can deal with start of touch
+     * to get initial location and send menu to finger, then when the touch
+     * location is moved, the table is set to follow the finger. Lastly, I fast
+     * swipe results in auto-open/auto-close of menu
+     *
+     * @param  panning gesture on main navigation controller
+     * @return all the possible cells
+     * @author Alex Chuckas
+     */
     @objc func handle_pan(gesture: UIPanGestureRecognizer) {
         //essentially same as touchesbegan
         if(gesture.state == .began) {
@@ -270,6 +332,13 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     // ---- settings table animations ----
+    /*
+     * Description: open the settings menu from any position on screen & animate
+     *
+     * @param  none
+     * @return none
+     * @author Alex Chuckas
+     */
     func settings_open() {
         UITableView.animate(withDuration: 0.3) {
             self.Settings_Table.center.x = 150
@@ -283,6 +352,13 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         can_touch_settings = true
     }
     
+    /*
+     * Description: close the settings menu from any position on screen & animate
+     *
+     * @param  none
+     * @return none
+     * @author Alex Chuckas
+     */
     func settings_close() {
         UITableView.animate(withDuration: 0.3) {
             self.Settings_Table.center.x = -150

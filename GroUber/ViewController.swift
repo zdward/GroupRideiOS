@@ -17,7 +17,13 @@ class ViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     var signup_mode = true; //WILL SAVE THIS IN USERDEFAULTS LATER, saved pass and username feature, maybe attempt autologin
     
-    //displays an alert to the view controller
+    /*
+     * Description: diplays an alert to the viewcontroller with a title & a message
+     *
+     * @param  a short title, a specified reason/message
+     * @return none
+     * @author Alex Chuckas
+     */
     func createAlert(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
