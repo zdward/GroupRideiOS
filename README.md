@@ -44,4 +44,18 @@ From there, you can specify any action you want. For example: send the user an o
 
 ### ***If this was button was created in a view controller that is not the first view controller in your project...*** ###
 
-TO BE COMPLETED
+The process of creating an action for a button not located in the first view controller in your project is very similiar. The only preliminary step is creating a cocoa touch class swift file. This can be done by clicking over to "File" in the top taskbar while in your Xcode project. Hover over to "File" and click on "New": 
+
+<br/><img width="600" alt="screen shot 2019-02-22 at 4 23 51 pm" src="https://user-images.githubusercontent.com/26397102/53272158-7ec47080-36be-11e9-8732-a3f5fcc8a78e.png"><br/>
+
+Once you click "New", be sure to select the "Cocoa Touch class" and no other source. 
+
+<br/><img width="735" alt="screen shot 2019-02-22 at 4 26 22 pm" src="https://user-images.githubusercontent.com/26397102/53272202-a0bdf300-36be-11e9-8c4e-e249e611f407.png"><br/>
+
+Name it a different name from your default view controller class, and click "create." This will create a file in your xcode10 project. In this example, our swift file is called "TestViewController2.swift":
+
+<br/><img width="219" alt="screen shot 2019-02-22 at 4 28 33 pm" src="https://user-images.githubusercontent.com/26397102/53272325-f1355080-36be-11e9-9648-b65c130fceb5.png"><br/>
+
+Now go over to your view controller and link the class to the through the identity inspector. This process mirrors the steps we followed in the default view controller outline above. Going forward, you can create action's by holding the control key and dragging it to your created view controller swift file. 
+
+
