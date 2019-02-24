@@ -38,7 +38,7 @@ class CreateAccount: UIViewController{
         }
         email = email + "@rpi.edu";
         keyword = keyword + "_" //so the outlet is used, really a useless line of code
-        if email == "" || keyword == "" || displayName == ""{
+        if email == "" || keyword == "" || displayName.text == ""{
             createAlert(title: "ERROR", message: "Make sure to fill out all fields");
             return;
         }
