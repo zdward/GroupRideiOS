@@ -14,8 +14,7 @@ class CreateAccount: UIViewController{
     @IBOutlet weak var RCSID: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmed_pass: UITextField!
-    
-    
+    @IBOutlet weak var displayName: UITextField!
     
     func createAlert(title: String, message: String) {
         
@@ -39,8 +38,8 @@ class CreateAccount: UIViewController{
         }
         email = email + "@rpi.edu";
         keyword = keyword + "_" //so the outlet is used, really a useless line of code
-        if email == "" || keyword == ""{
-            createAlert(title: "ERROR", message: "Make sure to fill out both fields");
+        if email == "" || keyword == "" || displayName == ""{
+            createAlert(title: "ERROR", message: "Make sure to fill out all fields");
             return;
         }
         else{
