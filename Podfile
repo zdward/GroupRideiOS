@@ -6,6 +6,11 @@ target 'GroUber' do
   use_frameworks!
 
   # Pods for GroUber
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'KeychainSwift'
+  pod 'Firebase/Database'
+  pod 'Firebase'
 
   target 'GroUberTests' do
     inherit! :search_paths
@@ -18,8 +23,3 @@ target 'GroUber' do
   end
 
 end
-
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
-pod 'Firebase'
