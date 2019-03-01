@@ -25,10 +25,6 @@ class CreateAccount: UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func go_back(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     //The sign-in function, stores info in firebase authentication
     @IBAction func sign_in(_ sender: Any) {
         var email: String = String(RCSID.text!);
