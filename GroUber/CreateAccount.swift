@@ -27,6 +27,9 @@ class CreateAccount: UIViewController{
     }
     
     
+    @IBAction func back_to_home(_ sender: Any) {
+        self.performSegue(withIdentifier: "backToHome", sender: nil)
+    }
     //The sign-in function, stores info in firebase authentication
     @IBAction func sign_in(_ sender: Any) {
         var email: String = String(RCSID.text!);
@@ -35,14 +38,15 @@ class CreateAccount: UIViewController{
             keyword = String(password.text!)
         }
         else{
-            keyword = "NULL" //return an error in this case
+            keyword = "" //return an error in this case
         }
         email = email + "@rpi.edu";
         keyword = keyword + "_" //so the outlet is used, really a useless line of code
-        if email == "" || keyword == ""{
-            createAlert(title: "ERROR", message: "Make sure to fill out both fields");
+        if email == "@rpi.edu" || keyword == "_"{
+            createAlert(title: "INVALID SIGN-IN", message: "Make sure to fill out both fields and that your password matches your confirmed password!");
             return;
         }
+        
         else{
             //Stores the new user on firebase/authentication
             Auth.auth().createUser(withEmail: email, password: keyword) { authResult, error in
