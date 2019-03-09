@@ -26,35 +26,52 @@ class CreateAccount: UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-    @IBAction func back_to_home(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToHome", sender: nil)
-    }
     //The sign-in function, stores info in firebase authentication
     @IBAction func sign_in(_ sender: Any) {
-        var email: String = String(RCSID.text!);
-        var keyword: String;
-        if password.text == confirmed_pass.text {
-            keyword = String(password.text!)
+        // check if all fields have been filled out
+        if String(RCSID.text!) == "" ||
+            String(password.text!) == "" ||
+            String(confirmed_pass.text!) == "" {
+            createAlert(title: "ERROR", message: "Please make sure to fill out all fields");
+            return
         }
-        else{
-            keyword = "" //return an error in this case
+        // check if password is correctly confirmed
+        if password.text != confirmed_pass.text {
+            createAlert(title: "ERROR", message: "Please make sure the passwords match");
+            return
         }
-        email = email + "@rpi.edu";
-        keyword = keyword + "_" //so the outlet is used, really a useless line of code
-        if email == "@rpi.edu" || keyword == "_"{
-            createAlert(title: "INVALID SIGN-IN", message: "Make sure to fill out both fields and that your password matches your confirmed password!");
-            return;
+        // check if password is 6 characters or longer
+        if password.text!.count < 6 {
+            createAlert(title: "ERROR", message: "Password must be at least 6 characters");
+            return
         }
         
-        else{
-            //Stores the new user on firebase/authentication
-            Auth.auth().createUser(withEmail: email, password: keyword) { authResult, error in
-                if error != nil{
-                    print("Error creating user: \(error!.localizedDescription)");
-                } else {
-                    print("User created!")
-                    self.performSegue(withIdentifier: "account_created", sender: nil)
+        let email: String = String(RCSID.text!) + "@rpi.edu"
+        let userPassword = String(password.text!)
+        //Stores the new user on firebase/authentication
+        Auth.auth().createUser(withEmail: email, password: userPassword) { authResult, error in
+            if error != nil{
+                print("Error creating user: \(error!.localizedDescription)");
+            } else {
+                // successfully created user account and stored in database
+                print("User created!")
+                // log-in the user with the account they created
+                Auth.auth().signIn(withEmail: email, password: userPassword) { user, error in
+                    if error != nil{
+                        print("Error logging in: \(error!.localizedDescription)");
+                        self.createAlert(title: "ERROR", message: "Couldn't log in. Please try again")
+                    } else {
+                        // successfully logged in the user to their new account
+                        // send email verification to user's email address
+                        self.createAlert(title: "Email Verification", message: "Please verify your email address by clicking on the link in the email sent to your email address.");
+                        Auth.auth().currentUser?.sendEmailVerification { (error) in
+                            if error != nil{
+                                print("Error sending email address verification: \(error!.localizedDescription)");
+                            } else {
+                                self.performSegue(withIdentifier: "account_created", sender: nil)
+                            }
+                        }
+                    }
                 }
             }
         }

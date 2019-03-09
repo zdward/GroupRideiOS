@@ -64,7 +64,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "About_Segue", sender: nil)
         
     }
-    //Takes you to the register page
     @IBAction func register(_ sender: Any) {
         //buffering, cannot interact with screen
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -79,9 +78,10 @@ class ViewController: UIViewController {
         self.activityIndicator.stopAnimating() //temp
         UIApplication.shared.endIgnoringInteractionEvents() //temp
         DispatchQueue.main.async{
-            self.performSegue(withIdentifier: "create_account", sender: self)
+            self.performSegue(withIdentifier: "create_account", sender: nil)
         }
     }
+    //Takes you to the register page
     
     //added so this button at least does something. We don't want any dead buttons.
     @IBAction func forgot_password(_ sender: Any) {
