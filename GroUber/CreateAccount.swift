@@ -38,10 +38,28 @@ class CreateAccount: UIViewController{
         email = email + "@rpi.edu";
         keyword = keyword + "_" //so the outlet is used, really a useless line of code
         if email == "" || keyword == "" || displayName.text == ""{
-            createAlert(title: "ERROR", message: "Make sure to fill out all fields");
+            createAlert(title: "ERROR", message: "Please fill out all fields");
+            return;
+        } else if password.text != confirmed_pass.text {
+            createAlert(title: "ERROR", message: "Please make sure that passwords match");
+            
+            password.layer.cornerRadius = 8.0;
+            password.layer.masksToBounds = true;
+            password.layer.borderColor = UIColor.red.cgColor;
+            password.layer.borderWidth = 1.0;
+            
+            confirmed_pass.layer.cornerRadius = 8.0;
+            confirmed_pass.layer.masksToBounds = true;
+            confirmed_pass.layer.borderColor = UIColor.red.cgColor;
+            confirmed_pass.layer.borderWidth = 1.0;
+            
             return;
         }
         else{
+            password.layer.borderColor = UIColor.clear.cgColor;
+            confirmed_pass.layer.borderColor = UIColor.clear.cgColor;
+            displayName.layer.borderColor = UIColor.clear.cgColor;
+            
             //Stores the new user on firebase/authentication
             Auth.auth().createUser(withEmail: email, password: keyword) { authResult, error in
                 if error != nil{
