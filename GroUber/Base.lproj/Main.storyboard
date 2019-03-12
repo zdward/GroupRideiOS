@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uax-3u-wUF">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -250,7 +250,7 @@
                                 <state key="normal" title="Post"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666668653488159" green="0.084461667923030448" blue="0.033513054945094441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LyO-i2-4vX" firstAttribute="centerY" secondItem="nSe-Yn-hug" secondAttribute="centerY" id="6jP-Bh-pfq"/>
                             <constraint firstItem="LyO-i2-4vX" firstAttribute="top" secondItem="GRC-3t-kDe" secondAttribute="bottom" constant="64" id="FzX-un-SRw"/>
@@ -307,7 +307,7 @@
                                 <rect key="frame" x="15" y="86" width="136" height="137"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666668650000005" green="0.084461667919999997" blue="0.033513054950000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MiA-47-NER" firstAttribute="leading" secondItem="ZLT-nD-yne" secondAttribute="leading" constant="30" id="8Xp-rD-0iP"/>
                             <constraint firstItem="WRK-b8-Vzc" firstAttribute="trailing" secondItem="MiA-47-NER" secondAttribute="trailing" id="B6H-aN-Mmn"/>
@@ -462,6 +462,7 @@
         <image name="logo" width="1172" height="1164"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Kry-ma-kHT"/>
         <segue reference="Z2e-D3-w7Z"/>
     </inferredMetricsTieBreakers>
 </document>
