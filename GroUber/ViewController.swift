@@ -30,20 +30,22 @@ class ViewController: UIViewController {
     //The login function
     @IBAction func Login(_ sender: Any) {
         // checks if there is text in both the rcsID_field and password_field
-        if var email = rcsID_field.text, var password = password_field.text {
-            //extract info from email text-field
-            email = String(email) + "@rpi.edu";
-            //extract info from password text-field
-            password = String(password) + "_";
-            //Firebase's sign-in function
-            Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                if error != nil{
-                    print("Error logging in user: \(error!.localizedDescription)");
-                    self.createAlert(title: "ERROR", message: "Invalid Username/Password!")
-                } else {
-                    // sign in success
-                    self.performSegue(withIdentifier: "Login_Segue", sender: nil)
-                }
+        if String(rcsID_field.text!) == "" || String(password_field.text!) == "" {
+            self.createAlert(title: "ERROR", message: "Please make sure to fill out all fields")
+            return
+        }
+        // extract info from email text-field
+        let email = String(rcsID_field.text!) + "@rpi.edu"
+        // extract info from password text-field
+        let password = String(password_field.text!)
+        //Firebase's sign-in function
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if error != nil{
+                print("Error logging in user: \(error!.localizedDescription)");
+                self.createAlert(title: "ERROR", message: "Invalid Username/Password!")
+            } else {
+                // sign in success
+                self.performSegue(withIdentifier: "Login_Segue", sender: nil)
             }
         }
     }

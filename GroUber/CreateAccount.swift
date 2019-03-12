@@ -29,17 +29,17 @@ class CreateAccount: UIViewController{
         if String(rcsID.text!) == "" ||
             String(password.text!) == "" ||
             String(confirm_password.text!) == "" {
-            createAlert(title: "ERROR", message: "Please make sure to fill out all fields");
+            self.createAlert(title: "ERROR", message: "Please make sure to fill out all fields")
             return
         }
         // check if password is correctly confirmed
-        if password.text != confirm_password.text {
-            createAlert(title: "ERROR", message: "Please make sure the passwords match");
+        if password.text! != confirm_password.text! {
+            self.createAlert(title: "ERROR", message: "Please make sure the passwords match");
             return
         }
         // check if password is 6 characters or longer
         if password.text!.count < 6 {
-            createAlert(title: "ERROR", message: "Password must be at least 6 characters");
+            self.createAlert(title: "ERROR", message: "Password must be at least 6 characters");
             return
         }
         
