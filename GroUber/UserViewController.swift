@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class UserViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -27,6 +28,11 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func updateProfile(_ sender: AnyObject) {
+        let imageData = UIImagePNGRepresentation(userImage) 
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

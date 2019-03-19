@@ -299,7 +299,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Zachary Ward" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-47-NER">
-                                <rect key="frame" x="30" y="269" width="121" height="21"/>
+                                <rect key="frame" x="191" y="86" width="121" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bbJ-YK-XVx"/>
                                 </constraints>
@@ -308,7 +308,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status: Frequent User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU9-ph-ech">
-                                <rect key="frame" x="30" y="311" width="182" height="21"/>
+                                <rect key="frame" x="191" y="123" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -328,11 +328,19 @@
                                 <rect key="frame" x="15" y="86" width="136" height="137"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20C-oD-lxY">
-                                <rect key="frame" x="8" y="231" width="151" height="30"/>
+                                <rect key="frame" x="20" y="231" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update Profile Picture"/>
+                                <state key="normal" title="Change Profile Picture"/>
                                 <connections>
                                     <action selector="updateUserImage:" destination="23x-6N-7JB" eventType="touchUpInside" id="KLP-xR-yxQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gl8-1H-eFA">
+                                <rect key="frame" x="48" y="269" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update Profile"/>
+                                <connections>
+                                    <action selector="updateProfile:" destination="23x-6N-7JB" eventType="touchUpInside" id="GpR-MZ-YXD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -497,6 +505,6 @@
         <image name="logo" width="1172" height="1164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z2e-D3-w7Z"/>
+        <segue reference="75p-kX-PaE"/>
     </inferredMetricsTieBreakers>
 </document>
