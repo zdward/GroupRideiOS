@@ -13,6 +13,15 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var userImage: UIImageView!
     
+    func createAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func updateUserImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -30,7 +39,17 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
     @IBAction func updateProfile(_ sender: AnyObject) {
-        let imageData = UIImagePNGRepresentation(userImage) 
+        let imageData = userImage.image!.pngData()
+        PFUser.current()?["photo"] = PFFileObject(name: "profile.png", data: imageData!)
+        PFUser.current()?.saveInBackground(block: { (success, error) in
+            if error != nil {
+                self.createAlert(title: "Error", message: "Update Failed");
+                return;
+            } else {
+                self.createAlert(title: "Success", message: "Profile Updated");
+                return;
+            }
+        })
     }
     
     
