@@ -38,6 +38,8 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Uncommented until database is implemented
+    /**
     @IBAction func updateProfile(_ sender: AnyObject) {
         let imageData = userImage.image!.pngData()
         PFUser.current()?["photo"] = PFFileObject(name: "profile.png", data: imageData!)
@@ -51,7 +53,7 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
             }
         })
     }
-    
+     **/
     
     override func viewDidLoad() {
         super.viewDidLoad()
