@@ -391,6 +391,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSs-7M-aRr">
+                                            <rect key="frame" x="184" y="134" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="loadinglul:" destination="ico-qY-oGe" eventType="touchUpInside" id="ULg-vj-BoF"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ixf-8r-N5E" firstAttribute="trailing" secondItem="HgP-Kp-x36" secondAttribute="trailingMargin" id="17R-c9-7Y7"/>
@@ -413,11 +421,13 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="ico-qY-oGe" id="s78-kX-zpf"/>
-                            <outlet property="delegate" destination="ico-qY-oGe" id="rlh-DR-QMY"/>
+                            <outlet property="dataSource" destination="ico-qY-oGe" id="P5O-sM-QBk"/>
+                            <outlet property="delegate" destination="ico-qY-oGe" id="nPZ-pH-gWy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RgY-TD-PEb"/>
+                    <navigationItem key="navigationItem" id="RgY-TD-PEb">
+                        <nil key="title"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAp-AC-M0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -486,7 +496,6 @@
         <image name="logo" width="1172" height="1164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kry-ma-kHT"/>
         <segue reference="Z2e-D3-w7Z"/>
         <segue reference="EV1-9j-faM"/>
     </inferredMetricsTieBreakers>

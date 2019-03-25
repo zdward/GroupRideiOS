@@ -50,6 +50,18 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //temporary------- replace with load first 10 usernames from database
+        var i:Int = 0
+        while i < 25 {
+            usernames.append("Alex")
+            i += 1
+        }
+        while i < 50 {
+            usernames.append("Chris")
+            i += 1
+        }
+        //end temporary
 
         //for the button
         let title_button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
@@ -110,11 +122,13 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handle_pan))
         pan.cancelsTouchesInView = false
         self.tabBarController!.view.addGestureRecognizer(pan)
+        
+        self.load_table()
     }
     
     // ---- refresh the main hub ----
     @objc func refresh() {
-        self.tableView.reloadData()
+        load_table()
         self.refresher.endRefreshing()
     }
 
@@ -133,8 +147,8 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
             return 6
         }
         //add code to return a specific number of posts and if scroll down can load more
-        if displayed_posts >= 25 {
-            return 25
+        if tableView == self.tableView {
+            return displayed_posts
         }
         return displayed_posts //if the user can only see less than 25 posts, can change
     }
@@ -167,13 +181,28 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
         }
         
         //add code below for the feed
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        
         let hub_cell = tableView.dequeueReusableCell(withIdentifier: "post_cell", for: indexPath) as! FeedCell
-        hub_cell.ProfileName.text = "Zachary Ward"
+        
+        //update for each individual row!
+        var i: Int = 0
+        while i <= lastRowIndex {
+            if indexPath.row == i {
+                hub_cell.ProfileName.text = usernames[i]
+            }
+            i += 1
+        }
         //hub_cell.ProfileImage.image = UIImage(named: <#T##String#>) //will be getting image from the database
         hub_cell.MessageLabel.text = "Looking for a GroupRide to Crossgates at 4:00pm on 3/4/19"
         hub_cell.selectionStyle = .none
         return hub_cell
     }
+    
+    let threshold: CGFloat = 100.0 // threshold from bottom of tableView
+    var isLoadingMore = false // flag
+    
     
     /*
      * Description: allow for cells to be tapped and have specific function.
@@ -225,11 +254,13 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
      * @return none
      * @author Alex Chuckas
      */
+    /*
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if tableView == self.tableView {
+            
             let lastSectionIndex = tableView.numberOfSections - 1
             let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
-            if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+            if indexPath.row == lastRowIndex && tableView == self.tableView {
                 //add the spinner to the footer of the table
                 let spinner = UIActivityIndicatorView(style: .gray)
                 spinner.startAnimating()
@@ -238,14 +269,68 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
                 self.tableView.tableFooterView = spinner
                 self.tableView.tableFooterView?.isHidden = false
                 
-                tableView.beginUpdates()
-                //in this area, query for more posts to add to the table
-                //tableView.insertRows(at: [IndexPath(row: yourArray.count-1, section: 0)], with: .automatic)
-                tableView.endUpdates()
+    
+                //increase the size of the array
+                let lastScrollOffset = CGPoint(x: tableView.contentOffset.x, y: tableView.contentOffset.y + 20)
+                print("hey man")
+                load_more_cells()
+                //DATABASE ---- try to load more posts from the database and if can't do more than 10, only show what we can (don't want everything at once, ie load at same time but here doesn't matter with testing
+                /*
+                if displayed_posts + 10 <= usernames.count {
+                    displayed_posts += 10
+                } else {
+                    displayed_posts = usernames.count
+                }
                 
-                //self.tableView.tableFooterView?.isHidden = true //call this after finishing update on table
+                let heyindex = IndexPath(row: displayed_posts - 1, section:0)
+                
+                //add all the new cells in
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [heyindex], with: .automatic)
+                self.tableView.endUpdates()
+                
+                //load table and scroll to last loaded cell
+                //self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                //self.load_table() //way to do it without this???
+                //self.tableView.layer.removeAllAnimations()
+                //self.tableView.setContentOffset(lastScrollOffset, animated: false)
+                
+                    //stop the footer animation
+                    //self.tableView.tableFooterView?.isHidden = true //call this after finishing update on table
+               // }
+                
+                //self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                */
+        
             }
+            
         }
+    }
+ */
+    func load_more_cells() {
+        var cur_show = displayed_posts //variable to increment
+        if displayed_posts + 10 <= usernames.count {
+            displayed_posts += 10
+        } else {
+            displayed_posts = usernames.count
+        }
+        
+        //add all the new cells in
+        self.tableView.beginUpdates()
+        while cur_show < displayed_posts {
+            print("hi")
+            let new_index = IndexPath(row: cur_show - 1, section:0)
+            self.tableView.insertRows(at: [new_index], with: .automatic)
+            cur_show += 1
+        }
+        self.tableView.endUpdates()
+    }
+    @IBAction func loadinglul(_ sender: Any) {
+        load_more_cells()
+    }
+    
+    @objc func load_table() {
+        self.tableView.reloadData()
     }
     
     // ---- Gesture Work ----
