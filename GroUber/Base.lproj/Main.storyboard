@@ -255,43 +255,57 @@
             </objects>
             <point key="canvasLocation" x="-194" y="-1040"/>
         </scene>
-        <!--View Controller-->
+        <!--Post View Controller-->
         <scene sceneID="S6V-ih-iRd">
             <objects>
-                <viewController id="JxH-eI-Ajf" sceneMemberID="viewController">
+                <viewController id="JxH-eI-Ajf" customClass="PostViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSe-Yn-hug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make a Post!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GRC-3t-kDe">
-                                <rect key="frame" x="87" y="197" width="240" height="56"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-1g-qpd">
+                                <rect key="frame" x="20" y="288" width="374" height="169"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="p87-jH-Olg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JxH-eI-Ajf" id="cQg-gi-ODz"/>
+                                </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyO-i2-4vX">
-                                <rect key="frame" x="191.66666666666666" y="317" width="31" height="102"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1S-Kf-29N">
+                                <rect key="frame" x="192" y="615" width="31" height="30"/>
                                 <state key="normal" title="Post"/>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-gi-8P6">
+                                <rect key="frame" x="47" y="64" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="575231106.36772096">
+                                    <!--2019-03-25 18:25:06 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerY" secondItem="nSe-Yn-hug" secondAttribute="centerY" id="6jP-Bh-pfq"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="top" secondItem="GRC-3t-kDe" secondAttribute="bottom" constant="64" id="FzX-un-SRw"/>
-                            <constraint firstItem="luc-yD-d9z" firstAttribute="bottom" secondItem="LyO-i2-4vX" secondAttribute="bottom" constant="268" id="IIa-9N-2CN"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="nSe-Yn-hug" secondAttribute="centerX" id="ZdL-IF-XY4"/>
-                            <constraint firstItem="GRC-3t-kDe" firstAttribute="top" secondItem="luc-yD-d9z" secondAttribute="top" constant="133" id="iSn-0H-Xlt"/>
-                            <constraint firstItem="GRC-3t-kDe" firstAttribute="leading" secondItem="luc-yD-d9z" secondAttribute="leading" constant="87" id="jl2-ky-Vhi"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="GRC-3t-kDe" secondAttribute="centerX" id="rjo-ws-LgX"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="nSe-Yn-hug" secondAttribute="centerX" id="y7o-Ch-6sw"/>
+                            <constraint firstItem="6pR-1g-qpd" firstAttribute="top" secondItem="aWc-gi-8P6" secondAttribute="bottom" constant="8" id="Iq3-RI-mHn"/>
+                            <constraint firstItem="luc-yD-d9z" firstAttribute="trailing" secondItem="6pR-1g-qpd" secondAttribute="trailing" constant="20" id="JRZ-DI-yMm"/>
+                            <constraint firstItem="6pR-1g-qpd" firstAttribute="leading" secondItem="luc-yD-d9z" secondAttribute="leading" constant="20" id="Kdk-jB-hop"/>
+                            <constraint firstItem="6pR-1g-qpd" firstAttribute="centerX" secondItem="H1S-Kf-29N" secondAttribute="centerX" id="PcS-Bh-Cmf"/>
+                            <constraint firstItem="6pR-1g-qpd" firstAttribute="top" secondItem="nSe-Yn-hug" secondAttribute="top" constant="288" id="dzo-L3-oWr"/>
+                            <constraint firstItem="6pR-1g-qpd" firstAttribute="centerX" secondItem="aWc-gi-8P6" secondAttribute="centerX" id="tYI-3I-j8Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="luc-yD-d9z"/>
                     </view>
                     <navigationItem key="navigationItem" id="qr4-w6-f7Z"/>
+                    <connections>
+                        <outlet property="date_pick" destination="aWc-gi-8P6" id="27G-eo-c67"/>
+                        <outlet property="post_text" destination="6pR-1g-qpd" id="kGR-dS-Ywh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAa-JB-n22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-1286"/>
+            <point key="canvasLocation" x="1579.7101449275362" y="-1286.413043478261"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r3p-0H-CNI">
@@ -440,6 +454,7 @@
                     <tabBarItem key="tabBarItem" title="Hub" id="0xB-d6-umh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sar-b4-FWA">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -460,6 +475,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G7H-QI-7eG">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -478,6 +494,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="gdb-tu-ZDC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GK5-J5-y2W">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
