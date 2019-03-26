@@ -24,6 +24,7 @@
 		83736A38220A37060043A7A4 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83736A37220A37060043A7A4 /* HubViewController.swift */; };
 		86CA51057CEB3AFC2C79188F /* Pods_GroUberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CF48066F7D5A50B1404E6C /* Pods_GroUberUITests.framework */; };
 		8701B92158B946D3A90C9030 /* Pods_GroUber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F0F44D26CBBA1816EB5B52 /* Pods_GroUber.framework */; };
+		DA0914AD224AAC910081A0F9 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0914AC224AAC910081A0F9 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		9C0303D328A12ECE97017DE1 /* Pods-GroUber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroUber.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroUber/Pods-GroUber.release.xcconfig"; sourceTree = "<group>"; };
 		B4F0F44D26CBBA1816EB5B52 /* Pods_GroUber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroUber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94EF83E44D37B1811485DAB /* Pods_GroUberTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroUberTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0914AC224AAC910081A0F9 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		E1E578CBB0035B247032E879 /* Pods-GroUberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroUberUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroUberUITests/Pods-GroUberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0CF48066F7D5A50B1404E6C /* Pods_GroUberUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroUberUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				830E36DC220A4B9300ADFBDB /* CustomTable.swift */,
 				830E36D8220A4A5300ADFBDB /* CoverView.swift */,
 				83736A37220A37060043A7A4 /* HubViewController.swift */,
+				DA0914AC224AAC910081A0F9 /* CreatePostViewController.swift */,
 				7A2ADAE321F186D500434337 /* ViewController.swift */,
 				7A2ADAE521F186D500434337 /* Main.storyboard */,
 				830E36DE220DC08F00ADFBDB /* FeedCell.swift */,
@@ -428,6 +431,7 @@
 				7A2ADAE221F186D500434337 /* AppDelegate.swift in Sources */,
 				7A89839921FCD96B0099C7CD /* AboutViewController.swift in Sources */,
 				830E36DD220A4B9300ADFBDB /* CustomTable.swift in Sources */,
+				DA0914AD224AAC910081A0F9 /* CreatePostViewController.swift in Sources */,
 				7AE48B4F2218B264008426FA /* CreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

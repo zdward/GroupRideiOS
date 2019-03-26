@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         let email = String(rcsID_field.text!) + "@rpi.edu"
         // extract info from password text-field
         let password = String(password_field.text!)
-        //Firebase's sign-in function
+        // Firebase's sign-in function
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if error != nil{
                 print("Error logging in user: \(error!.localizedDescription)");

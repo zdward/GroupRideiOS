@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -231,43 +231,81 @@
             </objects>
             <point key="canvasLocation" x="-194" y="-1040"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Group Ride-->
         <scene sceneID="S6V-ih-iRd">
             <objects>
-                <viewController id="JxH-eI-Ajf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nSe-Yn-hug">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make a Post!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GRC-3t-kDe">
-                                <rect key="frame" x="87" y="197" width="240" height="56"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyO-i2-4vX">
-                                <rect key="frame" x="191.66666666666666" y="317" width="31" height="102"/>
-                                <state key="normal" title="Post"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.66666668653488159" green="0.084461667923030448" blue="0.033513054945094441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerY" secondItem="nSe-Yn-hug" secondAttribute="centerY" id="6jP-Bh-pfq"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="top" secondItem="GRC-3t-kDe" secondAttribute="bottom" constant="64" id="FzX-un-SRw"/>
-                            <constraint firstItem="luc-yD-d9z" firstAttribute="bottom" secondItem="LyO-i2-4vX" secondAttribute="bottom" constant="268" id="IIa-9N-2CN"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="nSe-Yn-hug" secondAttribute="centerX" id="ZdL-IF-XY4"/>
-                            <constraint firstItem="GRC-3t-kDe" firstAttribute="top" secondItem="luc-yD-d9z" secondAttribute="top" constant="133" id="iSn-0H-Xlt"/>
-                            <constraint firstItem="GRC-3t-kDe" firstAttribute="leading" secondItem="luc-yD-d9z" secondAttribute="leading" constant="87" id="jl2-ky-Vhi"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="GRC-3t-kDe" secondAttribute="centerX" id="rjo-ws-LgX"/>
-                            <constraint firstItem="LyO-i2-4vX" firstAttribute="centerX" secondItem="nSe-Yn-hug" secondAttribute="centerX" id="y7o-Ch-6sw"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="luc-yD-d9z"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qr4-w6-f7Z"/>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAa-JB-n22" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="CreatePostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JxH-eI-Ajf" customClass="CreatePostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4eY-AU-eVw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIck Up Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-W9-msA">
+                                <rect key="frame" x="83" y="118" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uBa-4m-8mR">
+                                <rect key="frame" x="-2" y="231" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="575319348.505054">
+                                    <!--2019-03-26 18:55:48 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capacity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzE-kX-7A4">
+                                <rect key="frame" x="97" y="475" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bb-BU-NHq">
+                                <rect key="frame" x="179" y="475" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctB-e7-6rL">
+                                <rect key="frame" x="151" y="573" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post Group Ride"/>
+                                <connections>
+                                    <action selector="createGroupRide:" destination="JxH-eI-Ajf" eventType="touchUpInside" id="cRm-WL-jKM"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A30-Fl-KGT">
+                                <rect key="frame" x="83" y="179" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-a0-mF0">
+                                <rect key="frame" x="251" y="471" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="capacityUpdate:" destination="JxH-eI-Ajf" eventType="valueChanged" id="JnK-hZ-fCG"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6cP-sX-fUt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Group Ride" id="K1A-7W-uF7"/>
+                    <connections>
+                        <outlet property="capacityLabel" destination="8Bb-BU-NHq" id="CjK-p1-6va"/>
+                        <outlet property="capacityStepper" destination="IV9-a0-mF0" id="SL7-vz-7d4"/>
+                        <outlet property="destinationTextField" destination="A30-Fl-KGT" id="PwX-Em-Ix1"/>
+                        <outlet property="pickUpTextField" destination="x4n-W9-msA" id="rs4-UF-yhS"/>
+                        <outlet property="postButton" destination="ctB-e7-6rL" id="bjg-u7-RvX"/>
+                        <outlet property="rideDate" destination="uBa-4m-8mR" id="ABZ-pb-x0i"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="1580" y="-1286"/>
+            <point key="canvasLocation" x="1579.7101449275362" y="-1286.413043478261"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r3p-0H-CNI">
