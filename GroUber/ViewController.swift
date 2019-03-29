@@ -44,8 +44,13 @@ class ViewController: UIViewController {
                 print("Error logging in user: \(error!.localizedDescription)");
                 self.createAlert(title: "ERROR", message: "Invalid Username/Password!")
             } else {
-                // sign in success
-                self.performSegue(withIdentifier: "Login_Segue", sender: nil)
+                // check if user's account is verified
+                if (user?.user.isEmailVerified)! {
+                    // user's email is verified; sign in success
+                    self.performSegue(withIdentifier: "Login_Segue", sender: nil)
+                } else {
+                    self.createAlert(title: "Verification Required", message: "Please verify your account by clicking on the account verification link in your email")
+                }
             }
         }
     }

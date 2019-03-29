@@ -57,7 +57,8 @@ class CreateAccount: UIViewController{
                     } else {
                         // successfully logged in the user to their new account
                         // send email verification to user's email address
-                        self.createAlert(title: "Email Verification", message: "Please verify your email address by clicking on the link in the email sent to your email address.");
+                        // make this alert appear in the log in page?..
+                        // self.createAlert(title: "Email Verification", message: "Please verify your email address by clicking on the link in the email sent to your email address.");
                         Auth.auth().currentUser?.sendEmailVerification { (error) in
                             if error != nil{
                                 print("Error sending email address verification: \(error!.localizedDescription)");
