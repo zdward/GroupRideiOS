@@ -32,6 +32,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
         count_label.textAlignment = NSTextAlignment.center
         count_label.textColor = UIColor.gray
         
+        
         //the size of the placeholder text
         if post_text.text.count == 11 {
             count_label.text = "0/500"
