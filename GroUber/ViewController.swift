@@ -17,7 +17,13 @@ class ViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     var signup_mode = true; //WILL SAVE THIS IN USERDEFAULTS LATER, saved pass and username feature, maybe attempt autologin
     
-    //displays an alert to the view controller
+    /*
+     * Description: diplays an alert to the viewcontroller with a title & a message
+     *
+     * @param  a short title, a specified reason/message
+     * @return none
+     * @author Alex Chuckas
+     */
     func createAlert(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -30,19 +36,28 @@ class ViewController: UIViewController {
     
     //The login function
     @IBAction func Login(_ sender: Any) {
-        //extracts the info from email text-field
-        var email = String(username_field.text!)
-        email = email + "@rpi.edu";
-        //extracts the info from password text-field
-        var password = String(password_field.text!)
-        password = password + "_";
-        //Firebase's sign-in function
+        // checks if there is text in both the rcsID_field and password_field
+        if String(username_field.text!) == "" || String(password_field.text!) == "" {
+            self.createAlert(title: "ERROR", message: "Please make sure to fill out all fields")
+            return
+        }
+        // extract info from email text-field
+        let email = String(username_field.text!) + "@rpi.edu"
+        // extract info from password text-field
+        let password = String(password_field.text!)
+        // Firebase's sign-in function
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if error != nil{
                 print("Error logging in user: \(error!.localizedDescription)");
                 self.createAlert(title: "ERROR", message: "Invalid Username/Password!")
             } else {
-                self.performSegue(withIdentifier: "Login_Segue", sender: nil)
+                // check if user's account is verified
+                if (user?.user.isEmailVerified)! {
+                    // user's email is verified; sign in success
+                    self.performSegue(withIdentifier: "Login_Segue", sender: nil)
+                } else {
+                    self.createAlert(title: "Verification Required", message: "Please verify your account by clicking on the account verification link in your email")
+                }
             }
         }
     }

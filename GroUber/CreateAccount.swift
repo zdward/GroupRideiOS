@@ -26,24 +26,20 @@ class CreateAccount: UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
     
-    //The sign-in function, stores info in firebase authentication
     @IBAction func sign_in(_ sender: Any) {
         // check if all fields have been filled out
         if String(RCSID.text!) == "" ||
             String(password.text!) == "" ||
             String(confirmed_pass.text!) == "" {
-            createAlert(title: "ERROR", message: "Please make sure to fill out all fields");
-            return
+            self.createAlert(title: "ERROR", message: "Please make sure to fill out all fields")
         }
         // check if password is correctly confirmed
-        if password.text != confirmed_pass.text {
-            createAlert(title: "ERROR", message: "Please make sure the passwords match");
-            return
+        if password.text! != confirmed_pass.text! {
+            self.createAlert(title: "ERROR", message: "Please make sure the passwords match");
         }
         // check if password is 6 characters or longer
         if password.text!.count < 6 {
-            createAlert(title: "ERROR", message: "Password must be at least 6 characters");
-            return
+            self.createAlert(title: "ERROR", message: "Password must be at least 6 characters");
         }
         
         let email: String = String(RCSID.text!) + "@rpi.edu"
@@ -63,12 +59,13 @@ class CreateAccount: UIViewController{
                     } else {
                         // successfully logged in the user to their new account
                         // send email verification to user's email address
-                        self.createAlert(title: "Email Verification", message: "Please verify your email address by clicking on the link in the email sent to your email address.");
+                        // make this alert appear in the log in page?..
+                        // self.createAlert(title: "Email Verification", message: "Please verify your email address by clicking on the link in the email sent to your email address.");
                         Auth.auth().currentUser?.sendEmailVerification { (error) in
                             if error != nil{
                                 print("Error sending email address verification: \(error!.localizedDescription)");
                             } else {
-                                self.performSegue(withIdentifier: "account_created", sender: nil)
+                                self.createAlert(title: "Email Verification", message: "Verify your email before logging in")
                             }
                         }
                     }
