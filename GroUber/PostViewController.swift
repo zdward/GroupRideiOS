@@ -9,11 +9,14 @@
 import UIKit
 
 class PostViewController: UIViewController, UITextViewDelegate {
-    
     //WILL NEED TO FIX CONSTRAINTS LATER
     @IBOutlet weak var post_text: UITextView!
     
-    @IBOutlet weak var date_pick: UIDatePicker!
+    //for entering time and day to meet
+    @IBOutlet weak var pm_am_picker: UISegmentedControl!
+    @IBOutlet weak var time_field: UITextField!
+    @IBOutlet weak var date_field: UITextField!
+    
     
     let count_label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     
@@ -41,8 +44,89 @@ class PostViewController: UIViewController, UITextViewDelegate {
         }
         self.post_text.addSubview(count_label)
         
-        self.date_pick.minimumDate = Date()
 
+    }
+    
+    func createAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //function for posting to server
+    @IBAction func post_action(_ sender: Any) {
+        //send information to database to be added to the post page
+        let dateFormatterGet = DateFormatter()
+        
+        //for actual date
+        dateFormatterGet.dateFormat = "mm/dd/yyyy"
+        let date = date_field.text
+        let am_pm_state = pm_am_picker.selectedSegmentIndex
+        var am_pm = ""
+        if am_pm_state == 0 {
+            am_pm = "am"
+        } else {
+            am_pm = "pm"
+        }
+        let message = post_text.text
+        
+        //get current date fields since we cant go to date before this
+        let cur_date = Date()
+        let calendar = Calendar.current
+        let cur_hour = calendar.component(.hour, from: cur_date)
+        let cur_minutes = calendar.component(.minute, from: cur_date)
+        let cur_day = calendar.component(.day, from: cur_date)
+        let cur_year = calendar.component(.year, from: cur_date)
+        let cur_month = calendar.component(.month, from: cur_date)
+    
+        if dateFormatterGet.date(from: date!) != nil  {
+            let date_arr = date!.characters.split(separator: "/").map(String.init)
+            let day = Int(date_arr[1])!
+            let month = Int(date_arr[0])!
+            let year = Int(date_arr[2])!
+            
+            if day >= cur_day && month >= cur_month && year >= cur_year {
+                //for time
+                dateFormatterGet.dateFormat = "hh:mm"
+                
+                let time = time_field.text
+                let time_arr = time!.characters.split(separator: ":").map(String.init)
+                let hour = Int(time_arr[0])!
+                let minute = Int(time_arr[1])!
+
+                if dateFormatterGet.date(from: time!) != nil {
+                    if hour >= cur_hour && minute >= cur_minutes + 10 {
+                        if !(hour > 12 || minute > 59 || minute < 0 || hour < 1) {
+                            //---------- HERE IS WHERE WE WOULD POST TO THE SERVER ----------
+                            //can send variables month, day, year, minute, hour, am_pm, message to server
+                            
+                            
+                        } else {
+                            createAlert(title: "Invalid Time", message: "Hour or minute not correct")
+                            time_field.text = ""
+                        }
+                    } else {
+                        createAlert(title: "Invalid Time", message: "Please enter a time at least 10 minutes in the future")
+                        time_field.text = ""
+                    }
+                } else {
+                    createAlert(title: "Invalid Time Format", message: "Enter in format hh:mm")
+                    time_field.text = ""
+                }
+            } else {
+                createAlert(title: "Invalid Date", message: "Please enter a date that exists in the future")
+                date_field.text = ""
+            }
+            
+        } else {
+            createAlert(title: "Invalid Date Format", message: "Enter in format mm/dd/yyyy")
+            date_field.text = ""
+        }
+        
+        
     }
     
     //expandable field
