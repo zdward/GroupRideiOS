@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var rcsID_field: UITextField!
@@ -103,10 +103,20 @@ class ViewController: UIViewController {
         createAlert(title: "ERROR", message: "We haven't implemented this feature yet. For now, register a new account!")
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == rcsID_field || textField == password_field{
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        password_field.delegate = self
+        rcsID_field.delegate = self
     }
 }
 

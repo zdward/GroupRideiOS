@@ -237,7 +237,8 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
                 }))
                 alert.addAction(UIAlertAction(title: "Log Out", style: .default, handler: { (action) in
                     //complete logout action from database/userdefaults saved login
-                    self.dismiss(animated: true, completion: nil)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "login") as! ViewController
+                    self.present(vc, animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -254,7 +255,7 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
      * @return none
      * @author Alex Chuckas
      */
-    /*
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if tableView == self.tableView {
             
@@ -306,7 +307,7 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
             
         }
     }
- */
+ 
     func load_more_cells() {
         var cur_show = displayed_posts //variable to increment
         if displayed_posts + 10 <= usernames.count {
