@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uax-3u-wUF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -149,9 +149,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="vdw-nq-X2y"/>
                                 </constraints>
-                                <state key="normal" title="Sign In"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="sign_in:" destination="hu4-fe-ZtH" eventType="touchUpInside" id="c4J-X5-YfR"/>
+                                    <action selector="register:" destination="hu4-fe-ZtH" eventType="touchUpInside" id="S5J-7r-9Uv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAB-WG-Qkp">
@@ -159,7 +159,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="EV1-9j-faM"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="account_created" id="EV1-9j-faM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -184,10 +184,9 @@
                         <viewLayoutGuide key="safeArea" id="VVf-Zh-zot"/>
                     </view>
                     <connections>
-                        <outlet property="RCSID" destination="4YO-t8-Hh6" id="Xgx-yT-rU2"/>
-                        <outlet property="confirmed_pass" destination="IYc-91-VdE" id="gMs-eV-oQW"/>
-                        <outlet property="password" destination="UUU-NZ-0qi" id="eYf-6o-9ed"/>
-                        <segue destination="uax-3u-wUF" kind="show" identifier="account_created" id="75p-kX-PaE"/>
+                        <outlet property="confirm_password" destination="IYc-91-VdE" id="51n-74-WYy"/>
+                        <outlet property="password" destination="UUU-NZ-0qi" id="8nA-Qc-mf5"/>
+                        <outlet property="rcsID" destination="4YO-t8-Hh6" id="OAD-et-xML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l89-US-iii" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,8 +538,6 @@
         <image name="logo" width="1172" height="1164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wnh-Ag-kXk"/>
-        <segue reference="Z2e-D3-w7Z"/>
         <segue reference="EV1-9j-faM"/>
     </inferredMetricsTieBreakers>
 </document>
