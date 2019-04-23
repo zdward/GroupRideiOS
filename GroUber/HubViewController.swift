@@ -325,6 +325,7 @@ class HubViewController: UITableViewController, UISearchResultsUpdating {
             cur_show += 1
         }
         self.tableView.endUpdates()
+        self.tableView.reloadData()
     }
     @IBAction func loadinglul(_ sender: Any) {
         load_more_cells()
