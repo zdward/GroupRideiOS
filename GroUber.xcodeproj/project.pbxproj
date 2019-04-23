@@ -23,6 +23,7 @@
 		830E36DF220DC08F00ADFBDB /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830E36DE220DC08F00ADFBDB /* FeedCell.swift */; };
 		831898C0226E442900120DCD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831898BF226E442900120DCD /* ProfileViewController.swift */; };
 		831898C2226E477000120DCD /* PostReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831898C1226E477000120DCD /* PostReplyViewController.swift */; };
+		831898C5226FAD2800120DCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831898C4226FAD2800120DCD /* MainViewController.swift */; };
 		836C9AF222495258003C5AE5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C9AF122495258003C5AE5 /* PostViewController.swift */; };
 		83736A38220A37060043A7A4 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83736A37220A37060043A7A4 /* HubViewController.swift */; };
 		86CA51057CEB3AFC2C79188F /* Pods_GroUberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CF48066F7D5A50B1404E6C /* Pods_GroUberUITests.framework */; };
@@ -70,6 +71,7 @@
 		830E36DE220DC08F00ADFBDB /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		831898BF226E442900120DCD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		831898C1226E477000120DCD /* PostReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReplyViewController.swift; sourceTree = "<group>"; };
+		831898C4226FAD2800120DCD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		836C9AF122495258003C5AE5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		83736A37220A37060043A7A4 /* HubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
 		84A0F250E38DEFBD7D4F967A /* Pods-GroUberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroUberTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroUberTests/Pods-GroUberTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				83736A37220A37060043A7A4 /* HubViewController.swift */,
 				7A2ADAE321F186D500434337 /* ViewController.swift */,
 				7A2ADAE521F186D500434337 /* Main.storyboard */,
+				831898C4226FAD2800120DCD /* MainViewController.swift */,
 				831898C1226E477000120DCD /* PostReplyViewController.swift */,
 				831898BF226E442900120DCD /* ProfileViewController.swift */,
 				836C9AF122495258003C5AE5 /* PostViewController.swift */,
@@ -431,6 +434,7 @@
 				836C9AF222495258003C5AE5 /* PostViewController.swift in Sources */,
 				830E36DF220DC08F00ADFBDB /* FeedCell.swift in Sources */,
 				831898C0226E442900120DCD /* ProfileViewController.swift in Sources */,
+				831898C5226FAD2800120DCD /* MainViewController.swift in Sources */,
 				83736A38220A37060043A7A4 /* HubViewController.swift in Sources */,
 				830E36D9220A4A5300ADFBDB /* CoverView.swift in Sources */,
 				7A2ADAE421F186D500434337 /* ViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uax-3u-wUF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -264,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="-194.20289855072465" y="874.72826086956525"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="1ac-Hu-tpR">
             <objects>
-                <tabBarController id="uax-3u-wUF" sceneMemberID="viewController">
+                <tabBarController id="uax-3u-wUF" customClass="MainViewController" customModule="GroUber" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nx6-YS-ovI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -381,8 +381,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Posts:   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-kT-4a3">
-                                <rect key="frame" x="15" y="356" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Posts:   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-kT-4a3">
+                                <rect key="frame" x="15" y="356" width="345" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -431,6 +431,8 @@
                         <constraints>
                             <constraint firstItem="YUv-Pe-pDc" firstAttribute="bottom" secondItem="ZLT-nD-yne" secondAttribute="bottom" id="16k-hd-Ra3"/>
                             <constraint firstItem="WRK-b8-Vzc" firstAttribute="top" secondItem="ZLT-nD-yne" secondAttribute="top" constant="15" id="2ul-UL-4zg"/>
+                            <constraint firstItem="ZLT-nD-yne" firstAttribute="trailing" secondItem="8bh-kT-4a3" secondAttribute="trailing" constant="15" id="4QI-YA-xrU"/>
+                            <constraint firstItem="8bh-kT-4a3" firstAttribute="leading" secondItem="ZLT-nD-yne" secondAttribute="leading" constant="15" id="C9L-OW-NYW"/>
                             <constraint firstItem="MiA-47-NER" firstAttribute="top" secondItem="WRK-b8-Vzc" secondAttribute="bottom" constant="35" id="ITm-4w-kkK"/>
                             <constraint firstItem="WRK-b8-Vzc" firstAttribute="leading" secondItem="ZLT-nD-yne" secondAttribute="leading" constant="15" id="IyZ-fI-QfY"/>
                             <constraint firstItem="ZLT-nD-yne" firstAttribute="bottom" secondItem="YUv-Pe-pDc" secondAttribute="bottom" id="J5h-Kc-NRn"/>
@@ -447,8 +449,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="tcB-dr-e4M"/>
                     <connections>
-                        <outlet property="name_label" destination="MiA-47-NER" id="YLb-8U-aNC"/>
+                        <outlet property="name_label" destination="MiA-47-NER" id="LSo-Fo-t0m"/>
                         <outlet property="post_view" destination="YUv-Pe-pDc" id="iEv-Hl-SM2"/>
+                        <outlet property="user_image" destination="WRK-b8-Vzc" id="NgD-FP-Fki"/>
                         <segue destination="zBZ-Ak-1ZK" kind="show" identifier="profile_to_post_segue" id="1AG-zh-RKa"/>
                     </connections>
                 </viewController>

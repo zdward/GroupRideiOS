@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostReplyViewController: UITabBarController {
+class PostReplyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
