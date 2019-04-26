@@ -170,8 +170,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-Pu-j2f">
-                                <rect key="frame" x="159" y="363" width="57" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-Pu-j2f">
+                                <rect key="frame" x="159" y="496" width="57" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="vdw-nq-X2y"/>
                                 </constraints>
@@ -188,6 +188,20 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="account_created" id="EV1-9j-faM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fk-Cx-4IZ">
+                                <rect key="frame" x="125" y="331" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czU-1r-VyX">
+                                <rect key="frame" x="125" y="398" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -214,13 +228,15 @@
                     </view>
                     <connections>
                         <outlet property="confirm_password" destination="IYc-91-VdE" id="51n-74-WYy"/>
+                        <outlet property="firstName" destination="4fk-Cx-4IZ" id="tFb-Ew-JRg"/>
+                        <outlet property="lastName" destination="czU-1r-VyX" id="9dz-h3-eWO"/>
                         <outlet property="password" destination="UUU-NZ-0qi" id="8nA-Qc-mf5"/>
                         <outlet property="rcsID" destination="4YO-t8-Hh6" id="OAD-et-xML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l89-US-iii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728.98550724637687" y="132.88043478260872"/>
+            <point key="canvasLocation" x="728.79999999999995" y="132.68365817091455"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="8MQ-GO-LCc">
