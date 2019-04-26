@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class PostViewController: UIViewController, UITextViewDelegate {
     //WILL NEED TO FIX CONSTRAINTS LATER
@@ -56,6 +58,54 @@ class PostViewController: UIViewController, UITextViewDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func createPostID() {
+        let userID = Auth.auth().currentUser?.uid
+        let userDB =  Database.database().reference().child("Users").child(userID!)
+        
+        userDB.observeSingleEvent(of: .value, with: { (snapshot) in
+            // get user's data
+            let snapshotValue = snapshot.value as! [String : Any]
+            let userPosts : [String] = snapshotValue["posts"] as! [String]
+            
+            // create the postID (basically count the user's # of posts and assign next available #)
+            // check if this is the user's first post
+            var postID = -1
+            if userPosts.isEmpty {
+                postID = 1
+            } else{
+                postID = userPosts.count + 1
+            }
+            self.addPostToDB(userID: userID!, postID: String(postID))
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func addPostToDB(userID : String, postID : String) {
+        let postsDB = Database.database().reference().child("Posts")
+        let postData : [String : Any] = [
+            "ownerUID" : userID,
+            "time" : time_field.text!,
+            "isAM" : pm_am_picker.selectedSegmentIndex == 0 ? true : false,
+            "date" : date_field.text!,
+            "description" : self.post_text.text!,
+            // list of users who will share the ride, owner is automatically added
+            "groupRiders" : [userID]
+        ]
+        
+        // unique key for this post
+        let postID = userID + ":" + postID
+        // Send data to DB
+        postsDB.child(postID).setValue(postData) { (error, reference) in
+            if error != nil {
+                print(error!)
+            } else {
+                print("Successfully stored post in DB")
+            }
+        }
+    }
+    
     //function for posting to server
     @IBAction func post_action(_ sender: Any) {
         //send information to database to be added to the post page
@@ -102,6 +152,10 @@ class PostViewController: UIViewController, UITextViewDelegate {
                         if !(hour > 12 || minute > 59 || minute < 0 || hour < 1) {
                             //---------- HERE IS WHERE WE WOULD POST TO THE SERVER ----------
                             //can send variables month, day, year, minute, hour, am_pm, message to server
+                            // create unique post ID for this post and add to the database
+                            SVProgressHUD.show()
+                            self.createPostID()
+                            SVProgressHUD.dismiss()
                             
                             
                         } else {

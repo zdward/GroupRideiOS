@@ -33,7 +33,9 @@ class CreateAccount: UIViewController{
         let userData : [String : Any] = [
             "email" : email,
             "firstName" : firstName.text!,
-            "lastName" : lastName.text!
+            "lastName" : lastName.text!,
+            // posts is going map to a list of the user's postIDs
+            "posts" : []
         ]
         // Send data to DB
         usersDB.child(userID).setValue(userData) { (error, reference) in
@@ -87,6 +89,7 @@ class CreateAccount: UIViewController{
                         self.createAlert(title: "ERROR", message: "Couldn't log in. Please try again")
                     } else {
                         // successfully logged in the user to their new account
+                        // add user info to the database
                         self.addUserToDB(userID : Auth.auth().currentUser!.uid, email : email)
                         // send email verification to user's email address
                         Auth.auth().currentUser?.sendEmailVerification { (error) in
